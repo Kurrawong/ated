@@ -18,7 +18,7 @@ qskos:
     schema:citation "https://arxiv.org/abs/1206.1339"^^xsd:anyURI ;
     schema:codeRepository "https://github.com/leskneebone/ated"^^xsd:anyURI ;
     schema:copyrightHolder <https://kurrawong.ai> ;
-    schema:creator <https://ror.org/012x2n652> ;
+    schema:creator <https://orcid.org/0000-0001-5640-3202> ;
     schema:dateCreated "2026-06-24"^^xsd:date ;
     schema:dateModified "2026-06-24"^^xsd:date ;
     schema:description "SHACL shapes implementing structural and graph-based qSKOS quality checks for SKOS vocabularies."@en ;
@@ -40,6 +40,12 @@ qskos:
     schema:url "https://kurrawong.ai"^^xsd:anyURI ;
 .
 
+<https://orcid.org/0000-0001-5640-3202>
+    a schema:Person ;
+    schema:name "Les Kneebone" ;
+    schema:email "leskneebone@outlook.com"^^xsd:anyURI ;
+.
+
 qskos:SkosPrefixDeclaration
     sh:prefix "skos" ;
     sh:namespace "http://www.w3.org/2004/02/skos/core#"^^xsd:anyURI ;
@@ -54,7 +60,7 @@ qskos:ConceptLabelsPref
     sh:minCount 1 ;
     sh:datatype rdf:langString ;
     sh:uniqueLang true ;
-    sh:message "qSKOS missing labels / inconsistent preferred labels: each concept must have at least one language-tagged preferred label and no more than one per language."@en ;
+    sh:message "missing labels / inconsistent preferred labels: each concept must have at least one language-tagged preferred label and no more than one per language."@en ;
     schema:name "Concept preferred labels"@en ;
     schema:description "Checks required preferred labels, language tags and preferred-label uniqueness."@en ;
 .
@@ -66,7 +72,7 @@ qskos:ConceptLabelsAlt
     sh:targetClass skos:Concept ;
     sh:path skos:altLabel ;
     sh:datatype rdf:langString ;
-    sh:message "qSKOS omitted or invalid language tags: alternative labels must be language-tagged strings."@en ;
+    sh:message "omitted or invalid language tags: alternative labels must be language-tagged strings."@en ;
     schema:name "Concept alternative labels"@en ;
     schema:description "Checks that alternative labels are language-tagged strings."@en ;
 .
@@ -78,7 +84,7 @@ qskos:ConceptLabelsHidden
     sh:targetClass skos:Concept ;
     sh:path skos:hiddenLabel ;
     sh:datatype rdf:langString ;
-    sh:message "qSKOS omitted or invalid language tags: hidden labels must be language-tagged strings."@en ;
+    sh:message "omitted or invalid language tags: hidden labels must be language-tagged strings."@en ;
     schema:name "Concept hidden labels"@en ;
     schema:description "Checks that hidden labels are language-tagged strings."@en ;
 .
@@ -235,7 +241,7 @@ qskos:UndefinedRelatedResources
 qskos:EmptyLabelsConstraint
     a sh:SPARQLConstraint ;
     sh:prefixes qskos: ;
-    sh:message "qSKOS empty labels: a SKOS label is empty or contains only whitespace."@en ;
+    sh:message "empty labels: a SKOS label is empty or contains only whitespace."@en ;
     sh:select """
         SELECT DISTINCT $this ?path ?value
         WHERE {
@@ -249,7 +255,7 @@ qskos:EmptyLabelsConstraint
 qskos:DisjointLabelsConstraint
     a sh:SPARQLConstraint ;
     sh:prefixes qskos: ;
-    sh:message "qSKOS disjoint-label violation: the same lexical label and language is used with more than one SKOS label property on this concept."@en ;
+    sh:message "disjoint-label violation: the same lexical label and language is used with more than one SKOS label property on this concept."@en ;
     sh:select """
         SELECT DISTINCT $this ?value
         WHERE {
@@ -266,7 +272,7 @@ qskos:DisjointLabelsConstraint
 qskos:OverlappingPreferredLabelsConstraint
     a sh:SPARQLConstraint ;
     sh:prefixes qskos: ;
-    sh:message "qSKOS overlapping labels: another concept in the same scheme has the same preferred label."@en ;
+    sh:message "overlapping labels: another concept in the same scheme has the same preferred label."@en ;
     sh:select """
         SELECT DISTINCT $this ?value
         WHERE {
@@ -280,7 +286,7 @@ qskos:OverlappingPreferredLabelsConstraint
 qskos:UndocumentedConceptsConstraint
     a sh:SPARQLConstraint ;
     sh:prefixes qskos: ;
-    sh:message "qSKOS undocumented concept: the concept has no SKOS documentation property."@en ;
+    sh:message "undocumented concept: the concept has no SKOS documentation property."@en ;
     sh:select """
         SELECT $this
         WHERE {
@@ -298,7 +304,7 @@ qskos:UndocumentedConceptsConstraint
 qskos:OrphanConceptsConstraint
     a sh:SPARQLConstraint ;
     sh:prefixes qskos: ;
-    sh:message "qSKOS orphan concept: the concept has no semantic relation and is not declared as a top concept."@en ;
+    sh:message "orphan concept: the concept has no semantic relation and is not declared as a top concept."@en ;
     sh:select """
         SELECT $this
         WHERE {
@@ -318,7 +324,7 @@ qskos:OrphanConceptsConstraint
 qskos:ReflexiveRelationsConstraint
     a sh:SPARQLConstraint ;
     sh:prefixes qskos: ;
-    sh:message "qSKOS reflexive relation: a concept has a semantic or mapping relation to itself."@en ;
+    sh:message "reflexive relation: a concept has a semantic or mapping relation to itself."@en ;
     sh:select """
         SELECT DISTINCT $this ?path
         WHERE {
@@ -335,7 +341,7 @@ qskos:ReflexiveRelationsConstraint
 qskos:UnidirectionalRelatedConstraint
     a sh:SPARQLConstraint ;
     sh:prefixes qskos: ;
-    sh:message "qSKOS unidirectional associative relation: the inverse skos:related statement is not explicitly present."@en ;
+    sh:message "unidirectional associative relation: the inverse skos:related statement is not explicitly present."@en ;
     sh:select """
         SELECT DISTINCT $this ?value
         WHERE {
@@ -348,7 +354,7 @@ qskos:UnidirectionalRelatedConstraint
 qskos:UnidirectionalHierarchyConstraint
     a sh:SPARQLConstraint ;
     sh:prefixes qskos: ;
-    sh:message "qSKOS unidirectional hierarchy: a broader or narrower relation lacks its explicit inverse."@en ;
+    sh:message "unidirectional hierarchy: a broader or narrower relation lacks its explicit inverse."@en ;
     sh:select """
         SELECT DISTINCT $this ?path ?value
         WHERE {
@@ -370,7 +376,7 @@ qskos:UnidirectionalHierarchyConstraint
 qskos:HierarchicalCyclesConstraint
     a sh:SPARQLConstraint ;
     sh:prefixes qskos: ;
-    sh:message "qSKOS hierarchical cycle: following skos:broader one or more times returns to the same concept."@en ;
+    sh:message "hierarchical cycle: following skos:broader one or more times returns to the same concept."@en ;
     sh:select """
         SELECT $this
         WHERE {
@@ -382,7 +388,7 @@ qskos:HierarchicalCyclesConstraint
 qskos:TopConceptsWithBroaderConstraint
     a sh:SPARQLConstraint ;
     sh:prefixes qskos: ;
-    sh:message "qSKOS top concept with broader concept: a declared top concept has skos:broader."@en ;
+    sh:message "top concept with broader concept: a declared top concept has skos:broader."@en ;
     sh:select """
         SELECT DISTINCT $this ?value
         WHERE {
@@ -394,7 +400,7 @@ qskos:TopConceptsWithBroaderConstraint
 qskos:OmittedTopConceptsConstraint
     a sh:SPARQLConstraint ;
     sh:prefixes qskos: ;
-    sh:message "qSKOS omitted top concepts: the concept scheme has no declared top concept."@en ;
+    sh:message "omitted top concepts: the concept scheme has no declared top concept."@en ;
     sh:select """
         SELECT $this
         WHERE {
@@ -407,7 +413,7 @@ qskos:OmittedTopConceptsConstraint
 qskos:RelationClashesConstraint
     a sh:SPARQLConstraint ;
     sh:prefixes qskos: ;
-    sh:message "qSKOS relation clash: two concepts are both hierarchically and associatively related."@en ;
+    sh:message "relation clash: two concepts are both hierarchically and associatively related."@en ;
     sh:select """
         SELECT DISTINCT $this ?value
         WHERE {
@@ -420,7 +426,7 @@ qskos:RelationClashesConstraint
 qskos:MappingRelationsMisuseConstraint
     a sh:SPARQLConstraint ;
     sh:prefixes qskos: ;
-    sh:message "qSKOS mapping relation misuse: a mapping property links concepts belonging to the same concept scheme."@en ;
+    sh:message "mapping relation misuse: a mapping property links concepts belonging to the same concept scheme."@en ;
     sh:select """
         SELECT DISTINCT $this ?path ?value
         WHERE {
@@ -438,7 +444,7 @@ qskos:MappingRelationsMisuseConstraint
 qskos:UndefinedRelatedResourcesConstraint
     a sh:SPARQLConstraint ;
     sh:prefixes qskos: ;
-    sh:message "qSKOS undefined SKOS resource: a semantic relation points to a resource not typed as skos:Concept."@en ;
+    sh:message "undefined SKOS resource: a semantic relation points to a resource not typed as skos:Concept."@en ;
     sh:select """
         SELECT DISTINCT $this ?path ?value
         WHERE {
