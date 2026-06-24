@@ -1,0 +1,306 @@
+@prefix atedsc: <https://linked.data.gov.au/def/ated/SC/> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+atedsc:
+    a skos:ConceptScheme ;
+    skos:prefLabel "ATED Subject Classifications"@en ;
+    skos:definition "Subject classifications for ATED concepts" ;
+    skos:hasTopConcept atedsc:110, atedsc:120, atedsc:210, atedsc:220, atedsc:230, atedsc:240, atedsc:310, atedsc:320, atedsc:330, atedsc:340, atedsc:350, atedsc:360, atedsc:400, atedsc:410, atedsc:420, atedsc:430, atedsc:440, atedsc:450, atedsc:460, atedsc:470, atedsc:480, atedsc:490, atedsc:510, atedsc:520, atedsc:530, atedsc:540, atedsc:550, atedsc:560, atedsc:610, atedsc:620, atedsc:630, atedsc:640, atedsc:650, atedsc:710, atedsc:720, atedsc:730, atedsc:810, atedsc:820, atedsc:830, atedsc:910, atedsc:920 ;
+    schema:publisher <https://ror.org/012x2n652> ;
+    schema:creator <https://ror.org/012x2n652> ;
+    schema:createdDate "2026-06-24"^^xsd:date ;
+    schema:modifiedDate "2026-06-24"^^xsd:date .
+
+<https://ror.org/012x2n652>
+    a schema:Organization ;
+    schema:name "Australian Council for Educational Research" ;
+    schema:url "https://www.acer.org/"^^xsd:anyURI .
+
+atedsc:110
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Learning and perception"@en ;
+    skos:definition "Subject classification 110 Learning and perception"@en .
+
+atedsc:120
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Individual development and characteristics"@en ;
+    skos:definition "Subject classification 120 Individual development and characteristics"@en .
+
+atedsc:210
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Health and safety"@en ;
+    skos:definition "Subject classification 210 Health and safety"@en .
+
+atedsc:220
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Disabilities"@en ;
+    skos:definition "Subject classification 220 Disabilities"@en .
+
+atedsc:230
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Mental health"@en ;
+    skos:definition "Subject classification 230 Mental health"@en .
+
+atedsc:240
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Counselling"@en ;
+    skos:definition "Subject classification 240 Counselling"@en .
+
+atedsc:310
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Educational process: classroom perspectives"@en ;
+    skos:definition "Subject classification 310 Educational process: classroom perspectives"@en .
+
+atedsc:320
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Educational process: institutional perspectives"@en ;
+    skos:definition "Subject classification 320 Educational process: institutional perspectives"@en .
+
+atedsc:330
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Educational process: societal perspectives"@en ;
+    skos:definition "Subject classification 330 Educational process: societal perspectives"@en .
+
+atedsc:340
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Educational levels, qualifications and organisations"@en ;
+    skos:definition "Subject classification 340 Educational levels, qualifications and organisations"@en .
+
+atedsc:350
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Curriculum organisation"@en ;
+    skos:definition "Subject classification 350 Curriculum organisation"@en .
+
+atedsc:360
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Students, teachers, educational personnel"@en ;
+    skos:definition "Subject classification 360 Students, teachers, educational personnel"@en .
+
+atedsc:400
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Curriculum subjects"@en ;
+    skos:definition "Subject classification 400 Curriculum subjects"@en .
+
+atedsc:410
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Agriculture and natural resources"@en ;
+    skos:definition "Subject classification 410 Agriculture and natural resources"@en .
+
+atedsc:420
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Arts"@en ;
+    skos:definition "Subject classification 420 Arts"@en .
+
+atedsc:430
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Humanities"@en ;
+    skos:definition "Subject classification 430 Humanities"@en .
+
+atedsc:440
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Languages"@en ;
+    skos:definition "Subject classification 440 Languages"@en .
+
+atedsc:450
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Language and speech"@en ;
+    skos:definition "Subject classification 450 Language and speech"@en .
+
+atedsc:460
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Reading"@en ;
+    skos:definition "Subject classification 460 Reading"@en .
+
+atedsc:470
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Physical education and recreation"@en ;
+    skos:definition "Subject classification 470 Physical education and recreation"@en .
+
+atedsc:480
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Mathematics"@en ;
+    skos:definition "Subject classification 480 Mathematics"@en .
+
+atedsc:490
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Science and technology"@en ;
+    skos:definition "Subject classification 490 Science and technology"@en .
+
+atedsc:510
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "The Individual in social context"@en ;
+    skos:definition "Subject classification 510 The Individual in social context"@en .
+
+atedsc:520
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Social processes and structures"@en ;
+    skos:definition "Subject classification 520 Social processes and structures"@en .
+
+atedsc:530
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Social problems"@en ;
+    skos:definition "Subject classification 530 Social problems"@en .
+
+atedsc:540
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Bias and equity"@en ;
+    skos:definition "Subject classification 540 Bias and equity"@en .
+
+atedsc:550
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Human geography"@en ;
+    skos:definition "Subject classification 550 Human geography"@en .
+
+atedsc:560
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Peoples and cultures"@en ;
+    skos:definition "Subject classification 560 Peoples and cultures"@en .
+
+atedsc:610
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Government and politics"@en ;
+    skos:definition "Subject classification 610 Government and politics"@en .
+
+atedsc:620
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Economics and finance"@en ;
+    skos:definition "Subject classification 620 Economics and finance"@en .
+
+atedsc:630
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Labour and employment"@en ;
+    skos:definition "Subject classification 630 Labour and employment"@en .
+
+atedsc:640
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Occupations"@en ;
+    skos:definition "Subject classification 640 Occupations"@en .
+
+atedsc:650
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Business, commerce and industry"@en ;
+    skos:definition "Subject classification 650 Business, commerce and industry"@en .
+
+atedsc:710
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Information / communications systems"@en ;
+    skos:definition "Subject classification 710 Information / communications systems"@en .
+
+atedsc:720
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Communications media"@en ;
+    skos:definition "Subject classification 720 Communications media"@en .
+
+atedsc:730
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Publication / document types"@en ;
+    skos:definition "Subject classification 730 Publication / document types"@en .
+
+atedsc:810
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Research and theory"@en ;
+    skos:definition "Subject classification 810 Research and theory"@en .
+
+atedsc:820
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Measurement"@en ;
+    skos:definition "Subject classification 820 Measurement"@en .
+
+atedsc:830
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Tests and scales"@en ;
+    skos:definition "Subject classification 830 Tests and scales"@en .
+
+atedsc:910
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Equipment"@en ;
+    skos:definition "Subject classification 910 Equipment"@en .
+
+atedsc:920
+    a skos:Concept ;
+    skos:inScheme atedsc: ;
+    skos:topConceptOf atedsc: ;
+    skos:prefLabel "Facilities"@en ;
+    skos:definition "Subject classification 920 Facilities"@en .

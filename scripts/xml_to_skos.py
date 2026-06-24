@@ -141,15 +141,39 @@ def convert(source: Path, destination: Path) -> None:
                 non_descriptors[preferred.text].append(label)
 
     blocks = [
-        "@prefix dcterms: <http://purl.org/dc/terms/> .",
-        "@prefix skos: <http://www.w3.org/2004/02/skos/core#> .",
-        "@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .",
-        "",
+        "\n".join(
+            [
+                "@prefix dcterms: <http://purl.org/dc/terms/> .",
+                "@prefix ated: <https://linked.data.gov.au/def/ated/> .",
+                "@prefix schema: <https://schema.org/> .",
+                "@prefix skos: <http://www.w3.org/2004/02/skos/core#> .",
+                "@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .",
+            ]
+        ),
         render_subject(
-            "<https://linked.data.gov.au/def/ated>",
+            "ated:",
             [
                 ("a", ["skos:ConceptScheme"]),
                 ("skos:prefLabel", [turtle_string("Australian Thesaurus of Education Descriptors", "en")]),
+                (
+                    "skos:definition",
+                    [turtle_string("Australian Thesaurus of Education Descriptors", "en")],
+                ),
+                ("schema:publisher", ["<https://ror.org/012x2n652>"]),
+                ("schema:creator", ["<https://ror.org/012x2n652>"]),
+                ("schema:createdDate", ['"2026-06-24"^^xsd:date']),
+                ("schema:modifiedDate", ['"2026-06-24"^^xsd:date']),
+            ],
+        ),
+        render_subject(
+            "<https://ror.org/012x2n652>",
+            [
+                ("a", ["schema:Organization"]),
+                (
+                    "schema:name",
+                    [turtle_string("Australian Council for Educational Research")],
+                ),
+                ("schema:url", ['"https://www.acer.org/"^^xsd:anyURI']),
             ],
         ),
     ]
