@@ -13,6 +13,31 @@ from pathlib import Path
 
 BASE_IRI = "https://linked.data.gov.au/def/ated/"
 SCHEME_IRI = "https://linked.data.gov.au/def/ated"
+MONTHS = {
+    "jan": 1,
+    "january": 1,
+    "feb": 2,
+    "february": 2,
+    "mar": 3,
+    "march": 3,
+    "apr": 4,
+    "april": 4,
+    "may": 5,
+    "jun": 6,
+    "june": 6,
+    "jul": 7,
+    "july": 7,
+    "aug": 8,
+    "august": 8,
+    "sep": 9,
+    "september": 9,
+    "oct": 10,
+    "october": 10,
+    "nov": 11,
+    "november": 11,
+    "dec": 12,
+    "december": 12,
+}
 
 
 def local_name(label: str) -> str:
@@ -41,6 +66,27 @@ def turtle_string(value: str, language: str | None = None) -> str:
     literal = f'"{escaped}"'
     return f"{literal}@{language}" if language else literal
 
+
+def modified_date(value: str) -> str:
+    """Normalize an amendment date without inventing precision."""
+    compact = re.sub(r"\s+", " ", value.strip())
+    year_only = re.fullmatch(r"(\d{4})", compact)
+    if year_only:
+        return f"{turtle_string(year_only.group(1))}^^xsd:gYear"
+
+    month_year = re.fullmatch(r"([A-Za-z]+)\s*(\d{2}|\d{4})", compact)
+    if not month_year:
+        raise ValueError(f"Unrecognized amendment date: {value!r}")
+    month_name, year_text = month_year.groups()
+    try:
+        month = MONTHS[month_name.lower()]
+    except KeyError as error:
+        raise ValueError(f"Unrecognized month in amendment date: {value!r}") from error
+    year = int(year_text)
+    if len(year_text) == 2:
+        year += 1900 if year >= 50 else 2000
+    normalized = f"{year:04d}-{month:02d}"
+    return f"{turtle_string(normalized)}^^xsd:gYearMonth"
 
 def iri_for(label: str) -> str:
     return f"<{BASE_IRI}{local_name(label)}>"
@@ -97,6 +143,7 @@ def convert(source: Path, destination: Path) -> None:
     blocks = [
         "@prefix dcterms: <http://purl.org/dc/terms/> .",
         "@prefix skos: <http://www.w3.org/2004/02/skos/core#> .",
+        "@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .",
         "",
         render_subject(
             "<https://linked.data.gov.au/def/ated>",
@@ -149,7 +196,7 @@ def convert(source: Path, destination: Path) -> None:
         add_statement(
             statements,
             "dcterms:modified",
-            [turtle_string(element.text) for element in record.findall("AD")],
+            [modified_date(element.text) for element in record.findall("AD")],
         )
         if not record.findall("BT"):
             statements.insert(2, ("skos:topConceptOf", [f"<{SCHEME_IRI}>"]))
