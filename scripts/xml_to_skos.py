@@ -89,7 +89,14 @@ def modified_date(value: str) -> str:
     return f"{turtle_string(normalized)}^^xsd:gYearMonth"
 
 def iri_for(label: str) -> str:
-    return f"<{BASE_IRI}{local_name(label)}>"
+    return f"ated:{local_name(label)}"
+
+
+def subject_iri(classification: str) -> str:
+    match = re.fullmatch(r"(\d{3})\s+.+", classification.strip())
+    if not match:
+        raise ValueError(f"Unrecognized subject classification: {classification!r}")
+    return f"atedsc:{match.group(1)}"
 
 
 def add_statement(
@@ -145,6 +152,7 @@ def convert(source: Path, destination: Path) -> None:
             [
                 "@prefix dcterms: <http://purl.org/dc/terms/> .",
                 "@prefix ated: <https://linked.data.gov.au/def/ated/> .",
+                "@prefix atedsc: <https://linked.data.gov.au/def/ated/SC/> .",
                 "@prefix schema: <https://schema.org/> .",
                 "@prefix skos: <http://www.w3.org/2004/02/skos/core#> .",
                 "@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .",
@@ -181,7 +189,7 @@ def convert(source: Path, destination: Path) -> None:
     for descriptor, record in descriptors.items():
         statements: list[tuple[str, list[str]]] = [
             ("a", ["skos:Concept"]),
-            ("skos:inScheme", [f"<{SCHEME_IRI}>"]),
+            ("skos:inScheme", ["ated:"]),
             ("skos:prefLabel", [turtle_string(descriptor, "en")]),
         ]
 
@@ -215,7 +223,7 @@ def convert(source: Path, destination: Path) -> None:
         add_statement(
             statements,
             "dcterms:subject",
-            [turtle_string(element.text, "en") for element in record.findall("SC")],
+            [subject_iri(element.text) for element in record.findall("SC")],
         )
         add_statement(
             statements,
@@ -223,7 +231,7 @@ def convert(source: Path, destination: Path) -> None:
             [modified_date(element.text) for element in record.findall("AD")],
         )
         if not record.findall("BT"):
-            statements.insert(2, ("skos:topConceptOf", [f"<{SCHEME_IRI}>"]))
+            statements.insert(2, ("skos:topConceptOf", ["ated:"]))
 
         blocks.append(render_subject(iri_for(descriptor), statements))
 
