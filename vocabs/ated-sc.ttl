@@ -426,8 +426,8 @@ cs:
         :910 ,
         :920 ;
     skos:prefLabel "ATED Subject Categories"@en ;
-    schema:createdDate "2026-06-24"^^xsd:date ;
+    schema:dateCreated "2026-06-24"^^xsd:date ;
     schema:creator <https://ror.org/012x2n652> ;
-    schema:modifiedDate "2026-06-25"^^xsd:date ;
+    schema:dateModified "2026-06-25"^^xsd:date ;
     schema:publisher <https://ror.org/012x2n652> ;
 .
