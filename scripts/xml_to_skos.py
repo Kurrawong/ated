@@ -89,7 +89,7 @@ def modified_date(value: str) -> str:
     return f"{turtle_string(normalized)}^^xsd:gYearMonth"
 
 def iri_for(label: str) -> str:
-    return f"ated:{local_name(label)}"
+    return f":{local_name(label)}"
 
 
 def subject_iri(classification: str) -> str:
@@ -147,19 +147,28 @@ def convert(source: Path, destination: Path) -> None:
                     )
                 non_descriptors[preferred.text].append(label)
 
+    top_concepts = [
+        iri_for(descriptor)
+        for descriptor, record in descriptors.items()
+        if not record.findall("BT")
+    ]
+
     blocks = [
         "\n".join(
             [
                 "@prefix dcterms: <http://purl.org/dc/terms/> .",
-                "@prefix ated: <https://linked.data.gov.au/def/ated/> .",
+                "@prefix : <https://linked.data.gov.au/def/ated/> .",
                 "@prefix atedsc: <https://linked.data.gov.au/def/ated/SC/> .",
+                "@prefix cs: <https://linked.data.gov.au/def/ated> .",
+                "@prefix id: <http://id.loc.gov/vocabulary/identifiers/> .",
+                "@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .",
                 "@prefix schema: <https://schema.org/> .",
                 "@prefix skos: <http://www.w3.org/2004/02/skos/core#> .",
                 "@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .",
             ]
         ),
         render_subject(
-            "ated:",
+            "cs:",
             [
                 ("a", ["skos:ConceptScheme"]),
                 ("skos:prefLabel", [turtle_string("Australian Thesaurus of Education Descriptors", "en")]),
@@ -167,10 +176,12 @@ def convert(source: Path, destination: Path) -> None:
                     "skos:definition",
                     [turtle_string("Australian Thesaurus of Education Descriptors", "en")],
                 ),
+                ("skos:hasTopConcept", top_concepts),
                 ("schema:publisher", ["<https://ror.org/012x2n652>"]),
                 ("schema:creator", ["<https://ror.org/012x2n652>"]),
-                ("schema:createdDate", ['"2026-06-24"^^xsd:date']),
-                ("schema:modifiedDate", ['"2026-06-24"^^xsd:date']),
+                ("schema:dateCreated", ['"2026-06-24"^^xsd:date']),
+                ("schema:dateModified", ['"2026-06-24"^^xsd:date']),
+                ("schema:identifier", ['"9780864316813"^^id:isbn']),
             ],
         ),
         render_subject(
@@ -189,8 +200,19 @@ def convert(source: Path, destination: Path) -> None:
     for descriptor, record in descriptors.items():
         statements: list[tuple[str, list[str]]] = [
             ("a", ["skos:Concept"]),
-            ("skos:inScheme", ["ated:"]),
+            ("rdfs:isDefinedBy", ["cs:"]),
+            ("skos:inScheme", ["cs:"]),
             ("skos:prefLabel", [turtle_string(descriptor, "en")]),
+            (
+                "skos:definition",
+                [
+                    turtle_string(
+                        f"{descriptor} is a concept in the Australian Thesaurus "
+                        "of Education Descriptors",
+                        "en",
+                    )
+                ],
+            ),
         ]
 
         alt_labels = [element.text for element in record.findall("UF")]
@@ -231,7 +253,7 @@ def convert(source: Path, destination: Path) -> None:
             [modified_date(element.text) for element in record.findall("AD")],
         )
         if not record.findall("BT"):
-            statements.insert(2, ("skos:topConceptOf", ["ated:"]))
+            statements.insert(3, ("skos:topConceptOf", ["cs:"]))
 
         blocks.append(render_subject(iri_for(descriptor), statements))
 
