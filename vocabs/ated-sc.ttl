@@ -5,58 +5,6 @@ PREFIX schema: <https://schema.org/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-<https://linked.data.gov.au/def/ated/SC/>
-    a skos:ConceptScheme ;
-    skos:definition "Subject categories for ATED concepts" ;
-    skos:hasTopConcept
-        :110 ,
-        :120 ,
-        :210 ,
-        :220 ,
-        :230 ,
-        :240 ,
-        :310 ,
-        :320 ,
-        :330 ,
-        :340 ,
-        :350 ,
-        :360 ,
-        :400 ,
-        :410 ,
-        :420 ,
-        :430 ,
-        :440 ,
-        :450 ,
-        :460 ,
-        :470 ,
-        :480 ,
-        :490 ,
-        :510 ,
-        :520 ,
-        :530 ,
-        :540 ,
-        :550 ,
-        :560 ,
-        :610 ,
-        :620 ,
-        :630 ,
-        :640 ,
-        :650 ,
-        :710 ,
-        :720 ,
-        :730 ,
-        :810 ,
-        :820 ,
-        :830 ,
-        :910 ,
-        :920 ;
-    skos:prefLabel "ATED Subject Categories"@en ;
-    schema:createdDate "2026-06-24"^^xsd:date ;
-    schema:creator <https://ror.org/012x2n652> ;
-    schema:modifiedDate "2026-06-25"^^xsd:date ;
-    schema:publisher <https://ror.org/012x2n652> ;
-.
-
 :110
     a skos:Concept ;
     rdfs:isDefinedBy cs: ;
@@ -430,4 +378,56 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     a schema:Organization ;
     schema:name "Australian Council for Educational Research" ;
     schema:url "https://www.acer.org/"^^xsd:anyURI ;
+.
+
+cs:
+    a skos:ConceptScheme ;
+    skos:definition "Subject categories for ATED concepts" ;
+    skos:hasTopConcept
+        :110 ,
+        :120 ,
+        :210 ,
+        :220 ,
+        :230 ,
+        :240 ,
+        :310 ,
+        :320 ,
+        :330 ,
+        :340 ,
+        :350 ,
+        :360 ,
+        :400 ,
+        :410 ,
+        :420 ,
+        :430 ,
+        :440 ,
+        :450 ,
+        :460 ,
+        :470 ,
+        :480 ,
+        :490 ,
+        :510 ,
+        :520 ,
+        :530 ,
+        :540 ,
+        :550 ,
+        :560 ,
+        :610 ,
+        :620 ,
+        :630 ,
+        :640 ,
+        :650 ,
+        :710 ,
+        :720 ,
+        :730 ,
+        :810 ,
+        :820 ,
+        :830 ,
+        :910 ,
+        :920 ;
+    skos:prefLabel "ATED Subject Categories"@en ;
+    schema:createdDate "2026-06-24"^^xsd:date ;
+    schema:creator <https://ror.org/012x2n652> ;
+    schema:modifiedDate "2026-06-25"^^xsd:date ;
+    schema:publisher <https://ror.org/012x2n652> ;
 .
