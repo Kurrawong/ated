@@ -11,7 +11,7 @@ atedsc:
     schema:publisher <https://ror.org/012x2n652> ;
     schema:creator <https://ror.org/012x2n652> ;
     schema:createdDate "2026-06-24"^^xsd:date ;
-    schema:modifiedDate "2026-06-24"^^xsd:date .
+    schema:modifiedDate "2026-06-25"^^xsd:date .
 
 <https://ror.org/012x2n652>
     a schema:Organization ;
