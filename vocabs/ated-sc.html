@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ATED Subject Categories</title>
+    <style>
+        #pylode {
+            position: fixed;
+            top: 205px;
+            left: -150px;
+            font-size: small;
+            transform: rotate(-90deg);
+            color: grey;
+        }
+        #pylode a {
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #005A9C;
+        }
+        #pylode a:hover {
+            color: #333;
+        }
+        #pylode #p {
+            color: #329545;
+        }
+        #pylode #y {
+            color: #f9cb33;
+        }
+        #pylode #version {
+            font-size: 1.0em;
+        }
+
+        #profile {
+            font-style: italic;
+            font-size: 1.25em;
+            color: darkred!important;
+        }
+
+        .cardinality {
+            font-style: italic;
+            color: #aa00aa;
+        }
+
+        dl {
+            /*border: 1px solid navy;*/
+            /*padding:5px;*/
+        }
+
+        dt {
+            font-weight: bold;
+            padding: 0;
+        }
+
+        dd {
+            margin-bottom: 10px;
+            padding-top: 7px;
+        }
+
+        ul.pylodelitlist {
+            list-style-type: none;
+            margin-left: -40px;
+        }
+
+        #metadata ul li,
+        #classes ul li {
+            margin-bottom: 10px;
+        }
+
+        #metadata dd p {
+          margin: 0 0 1em 0;
+        }
+
+        ul.hlist {
+            list-style-type: none;
+            border: 1px solid navy;
+            padding:5px;
+            background-color: #F4FFFF;
+        }
+
+        div.hierarchy {
+            margin-bottom: 30px;
+            background-color: #F4FFFF;
+            padding: 10px;
+        }
+
+        ul.hierarchy {=
+            padding: 5px 25px 5px 25px;
+        }
+
+        ul.hierarchy li {
+            margin-top:5px;
+        }
+
+        ul.hlist li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .entity {
+            border: 1px solid navy;
+            margin:5px 0 5px 0;
+            padding: 5px;
+        }
+
+        .entity th {
+            width: 150px;
+            vertical-align: top;
+        }
+
+        .entity th,
+        .entity td {
+            padding-bottom: 20px;
+        }
+
+        .entity table th {
+            text-align: left;
+        }
+
+        section#overview img {
+            max-width: 1000px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left
+        }
+        h1, h2, h3 {
+            color: #005A9C; background: white
+        }
+        h1 {
+            font: 170% sans-serif;
+            line-height: 110%;
+        }
+        h2 {
+            font: 140% sans-serif;
+            margin-top:40px;
+        }
+        h3 {
+            font: 120% sans-serif;
+            margin-top: 20px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid navy;
+        }
+        h4 { font: bold 100% sans-serif }
+        h5 {
+            font: italic 100% sans-serif;
+            margin-bottom: 10px;
+        }
+        h6 { font: small-caps 100% sans-serif }
+
+        body {
+            padding: 2em 70px 2em 70px;
+            margin: 0;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            text-align: left;
+        }
+
+        section {
+            max-width: 1500px;
+        }
+
+        .figure {
+            margin-bottom: 20px;
+        }
+
+        :link { color: #00C; background: transparent }
+        :visited { color: #609; background: transparent }
+        a:active { color: #C00; background: transparent }
+
+        .sup-c,
+        .sup-op,
+        .sup-fp,
+        .sup-dp,
+        .sup-ap,
+        .sup-p,
+        .sup-ni,
+        .sup-con,
+        .sup-col {
+            cursor:help;
+        }
+
+        .sup-c {
+            color:orange;
+        }
+
+        .sup-op {
+            color:navy;
+        }
+
+        .sup-fp {
+            color:lightskyblue;
+        }
+
+        .sup-dp {
+            color:green;
+        }
+
+        .sup-ap {
+            color:darkred;
+        }
+
+        .sup-p {
+            color:black;
+        }
+
+        .sup-ni {
+            color:brown;
+        }
+
+        .sup-con {
+            color:orange;
+        }
+
+        .sup-col {
+            color:darkred;
+        }
+
+        sup {
+            margin-left: -3px;
+        }
+        code {
+            font-size: large;
+            color: darkred;
+        }
+
+        /* less prominent links for properties */
+        .proplink {
+            color: #336;
+            text-decoration: none;
+        }
+
+        #toc {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 2;
+            height: 100%;
+            overflow-y: auto;
+            padding: 10px;
+            border: solid 1px navy;
+            font-size: small;
+            width: 180px;
+        }
+        #toc h3 {
+            margin-top: 5px;
+        }
+
+        #toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        #toc .first > li {
+            margin-top: 5px;
+        }
+
+        #toc .second,
+        #toc .third {
+            padding-left: 10px;
+        }
+
+        #content {
+            width: calc(100% - 150px);
+        }
+
+        .hover_property {
+            cursor: help;
+            text-decoration: none;
+            border-bottom: dashed 1px;
+        }
+
+        .setclass {
+            list-style-type: none;
+        }
+
+        code{
+            word-wrap: break-word;
+          }
+        table {
+            table-layout: fixed;
+            width: 100%;
+        }
+        td {
+            word-wrap: break-word;
+        }
+        #legend table.entity {
+            width: 25%;
+        }
+	</style>
+    <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhklEQVQ4jbWPzStEURjG3yQLirlGKUnKFO45Z+SjmXvnnmthQcpCoVhYmD/AwmJiI3OvZuZc2U3UlKU0/gAslMw9JgvhHxAr2fko7r0jHSsl+TgbTz2Lt5731/MASEiJW9ONml2QyX6rsGalmnT74v8BDf12hxJfpV8d1uwNKUBYszabdFv84L8B9X0rESVmmUup2fme0cVhJWaZHw4NWL1SewEAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ9Hn31OgoATL+CkLDGB5H1OKj4nFd/FBxUXJ0UZNb4edw/6nLyJXaj5FeCVyPLNIVmYK8TG1IwWb16L1gEACAFV90ftoT8bdOX0EeyY99gxBXZMgRz6qGb1KantAACI0UvE6F5XJqEjpsdURouI0Vt5gGOUkUNnPu7ObGIIMfNaGqDmjDRi9FZldF1lRgYzeqUyeoiY4ag5Iy3RgOYRM8+/M2bG8efsO4hGrpmJseyMAAAAAElFTkSuQmCC" rel="icon" sizes="16x16" type="image/png">
+    <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC40lEQVRYhe2UT0hUQRzHp6Iss1B3VZKIDbbdfW9mnoi4f3zzjkJQeOgS0SEIb1EWBGGlLLu460zQPQM1unUIIjA6rfpm6ZAhHjoIRVQUFUlEbG+euTsdXG1d3VL3bVD4g+9h+L35fT/8fvN7ADgY9aHY5fpIvK82HO9ysu66wxWOzbkjcekKx0a2ALYA/n2AGi3a6ArFezcidziecQygNhhrcUficjP6PwBqtGijKxy/thnVBePHywYoDsFhl53GV8SEcsTx4usCMLUewTVpc23BNvEzm6Neyf1+KcG2vwqwUjgrOJq2JmHftwmkVBRGTvncFodnbI7vChO/FRznCmHsNM7aHM9Yk7Df5iqsLMw9sMNOK2g+jS4IEz0UJv4iuJZb2RltWnB4UZqH6ioGAgAAGe5vtiZhtzDx7OoRadLmeM7m6IRjhnLMW2Vx1bA5GhAmnhIcz6/xNj4Ujsky8UspwfayjDPjsF2Y6L7N8Vzx/BfP+KPg6LbgSqd8DnfJW2CnbaLhfH5ephpqygJYvQU4Z3P82TLRsDDhUTnmrSq+Y3N0Mg+Xldy/zwEAnLMWZ3pHpNExmfLs/t0dOdVcbT0JeKxUwFP2VljjqiE47Jp53LTXNxhsUZjerTByXWX6VZWRs/4bIQ2ACv+UAomgDzLCISNZxAxZKMhIDjLy1JfsaK+I+eGBUBNk5E2x8RogX/PdcDZUqieWTSh5D6nOVKqfhoycUmlHFFIyu5RXqf7AcQDISCpv/tqbMBqK883RtmpISRoxQyJKPgGn3wNk5NEigDFa6hslqV/Kj+FdBQD0bshIDlKSLlVcoWQo36UhR80BAMB73lulMn0EMpJTqD6qJiOt3mho/8GbkT2BZNgDB/V+RI0fkOrT3kRIVQbaDizJm2hdNbINBxwk5xAj3yEjuV9rZ1iIkgxixkLBA83mz8uCjLwoGwAx0vOnFSy5mtR4VTaAQvVORMnwZgSpzkrV/QmdE2tKe46+MQAAAABJRU5ErkJggg==" rel="icon" sizes="32x32" type="image/png">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <script id="schema.org" type="application/ld+json">
+[
+  {
+    "@id": "https://ror.org/012x2n652",
+    "https://schema.org/name": [
+      {
+        "@value": "Australian Council for Educational Research"
+      }
+    ],
+    "https://schema.org/url": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://www.acer.org/"
+      }
+    ]
+  },
+  {
+    "@id": "https://linked.data.gov.au/def/ated/SC",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/creator": [
+      {
+        "@id": "https://ror.org/012x2n652"
+      }
+    ],
+    "https://schema.org/publisher": [
+      {
+        "@id": "https://ror.org/012x2n652"
+      }
+    ]
+  }
+]
+	</script>
+  </head>
+  <body>
+    <div id="content">
+      <div class="section" id="metadata">
+        <h1></h1>
+        <h2>Metadata</h2>
+        <dl>
+          <div>
+            <dt>
+              <strong>IRI</strong>
+            </dt>
+            <dd>
+              <code>https://linked.data.gov.au/def/ated/SC</code>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a href="http://purl.org/dc/terms/creator">Creator</a>
+            </dt>
+            <dd>
+              <div>
+                <p>
+                  <a href="https://ror.org/012x2n652">Australian Council for Educational Research</a>
+                </p>
+              </div>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a href="http://purl.org/dc/terms/publisher">Publisher</a>
+            </dt>
+            <dd>
+              <div>
+                <p>
+                  <a href="https://ror.org/012x2n652">Australian Council for Educational Research</a>
+                </p>
+              </div>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">Type</a>
+            </dt>
+            <dd>
+              <div>
+                <p>
+                  <a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a>
+                </p>
+              </div>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a href="https://schema.org/dateCreated">Date Created</a>
+            </dt>
+            <dd>
+              <div>
+                <p>2026-06-24</p>
+              </div>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a href="https://schema.org/dateModified">Date Modified</a>
+            </dt>
+            <dd>
+              <div>
+                <p>2026-06-25</p>
+              </div>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a href="https://schema.org/description">Description</a>
+            </dt>
+            <dd>
+              <div>
+                <p>Subject categories for ATED concepts</p>
+              </div>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a href="https://schema.org/name">Name</a>
+            </dt>
+            <dd>
+              <div>
+                <p>ATED Subject Categories</p>
+              </div>
+            </dd>
+          </div>
+        </dl>
+      </div>
+      <div id="concept-hierarchy">
+        <h2>Concept Hierarchy</h2>
+        <div class="hierarchy">
+          <ul class="hierarchy">
+            <li>
+              <a href="#410">Agriculture and natural resources</a>
+            </li>
+            <li>
+              <a href="#420">Arts</a>
+            </li>
+            <li>
+              <a href="#540">Bias and equity</a>
+            </li>
+            <li>
+              <a href="#650">Business, commerce and industry</a>
+            </li>
+            <li>
+              <a href="#720">Communications media</a>
+            </li>
+            <li>
+              <a href="#240">Counselling</a>
+            </li>
+            <li>
+              <a href="#350">Curriculum organisation</a>
+            </li>
+            <li>
+              <a href="#400">Curriculum subjects</a>
+            </li>
+            <li>
+              <a href="#220">Disabilities</a>
+            </li>
+            <li>
+              <a href="#620">Economics and finance</a>
+            </li>
+            <li>
+              <a href="#340">Educational levels, qualifications and organisations</a>
+            </li>
+            <li>
+              <a href="#310">Educational process: classroom perspectives</a>
+            </li>
+            <li>
+              <a href="#320">Educational process: institutional perspectives</a>
+            </li>
+            <li>
+              <a href="#330">Educational process: societal perspectives</a>
+            </li>
+            <li>
+              <a href="#910">Equipment</a>
+            </li>
+            <li>
+              <a href="#920">Facilities</a>
+            </li>
+            <li>
+              <a href="#610">Government and politics</a>
+            </li>
+            <li>
+              <a href="#210">Health and safety</a>
+            </li>
+            <li>
+              <a href="#550">Human geography</a>
+            </li>
+            <li>
+              <a href="#430">Humanities</a>
+            </li>
+            <li>
+              <a href="#120">Individual development and characteristics</a>
+            </li>
+            <li>
+              <a href="#710">Information / communications systems</a>
+            </li>
+            <li>
+              <a href="#630">Labour and employment</a>
+            </li>
+            <li>
+              <a href="#450">Language and speech</a>
+            </li>
+            <li>
+              <a href="#440">Languages</a>
+            </li>
+            <li>
+              <a href="#110">Learning and perception</a>
+            </li>
+            <li>
+              <a href="#480">Mathematics</a>
+            </li>
+            <li>
+              <a href="#820">Measurement</a>
+            </li>
+            <li>
+              <a href="#230">Mental health</a>
+            </li>
+            <li>
+              <a href="#640">Occupations</a>
+            </li>
+            <li>
+              <a href="#560">Peoples and cultures</a>
+            </li>
+            <li>
+              <a href="#470">Physical education and recreation</a>
+            </li>
+            <li>
+              <a href="#730">Publication / document types</a>
+            </li>
+            <li>
+              <a href="#460">Reading</a>
+            </li>
+            <li>
+              <a href="#810">Research and theory</a>
+            </li>
+            <li>
+              <a href="#490">Science and technology</a>
+            </li>
+            <li>
+              <a href="#530">Social problems</a>
+            </li>
+            <li>
+              <a href="#520">Social processes and structures</a>
+            </li>
+            <li>
+              <a href="#360">Students, teachers, educational personnel</a>
+            </li>
+            <li>
+              <a href="#830">Tests and scales</a>
+            </li>
+            <li>
+              <a href="#510">The Individual in social context</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="concepts">
+        <h2>Concept Definitions</h2>
+        <div class="entity">
+          <h3 id="410">Agriculture and natural resources</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/410</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 410 in the Australian Thesaurus of Education Descriptors, covering agriculture and natural resources.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="420">Arts</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/420</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 420 in the Australian Thesaurus of Education Descriptors, covering arts.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="540">Bias and equity</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/540</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 540 in the Australian Thesaurus of Education Descriptors, covering bias and equity.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="650">Business, commerce and industry</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/650</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 650 in the Australian Thesaurus of Education Descriptors, covering business, commerce and industry.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="720">Communications media</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/720</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 720 in the Australian Thesaurus of Education Descriptors, covering communications media.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="240">Counselling</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/240</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 240 in the Australian Thesaurus of Education Descriptors, covering counselling.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="350">Curriculum organisation</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/350</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 350 in the Australian Thesaurus of Education Descriptors, covering curriculum organisation.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="400">Curriculum subjects</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/400</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 400 in the Australian Thesaurus of Education Descriptors, covering curriculum subjects.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="220">Disabilities</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/220</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 220 in the Australian Thesaurus of Education Descriptors, covering disabilities.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="620">Economics and finance</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/620</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 620 in the Australian Thesaurus of Education Descriptors, covering economics and finance.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="340">Educational levels, qualifications and organisations</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/340</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 340 in the Australian Thesaurus of Education Descriptors, covering educational levels, qualifications and organisations.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="310">Educational process: classroom perspectives</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/310</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 310 in the Australian Thesaurus of Education Descriptors, covering educational process: classroom perspectives.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="320">Educational process: institutional perspectives</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/320</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 320 in the Australian Thesaurus of Education Descriptors, covering educational process: institutional perspectives.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="330">Educational process: societal perspectives</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/330</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 330 in the Australian Thesaurus of Education Descriptors, covering educational process: societal perspectives.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="910">Equipment</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/910</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 910 in the Australian Thesaurus of Education Descriptors, covering equipment.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="920">Facilities</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/920</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 920 in the Australian Thesaurus of Education Descriptors, covering facilities.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="610">Government and politics</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/610</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 610 in the Australian Thesaurus of Education Descriptors, covering government and politics.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="210">Health and safety</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/210</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 210 in the Australian Thesaurus of Education Descriptors, covering health and safety.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="550">Human geography</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/550</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 550 in the Australian Thesaurus of Education Descriptors, covering human geography.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="430">Humanities</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/430</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 430 in the Australian Thesaurus of Education Descriptors, covering humanities.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="120">Individual development and characteristics</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/120</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 120 in the Australian Thesaurus of Education Descriptors, covering individual development and characteristics.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="710">Information / communications systems</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/710</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 710 in the Australian Thesaurus of Education Descriptors, covering information / communications systems.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="630">Labour and employment</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/630</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 630 in the Australian Thesaurus of Education Descriptors, covering labour and employment.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="450">Language and speech</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/450</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 450 in the Australian Thesaurus of Education Descriptors, covering language and speech.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="440">Languages</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/440</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 440 in the Australian Thesaurus of Education Descriptors, covering languages.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="110">Learning and perception</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/110</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 110 in the Australian Thesaurus of Education Descriptors, covering learning and perception.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="480">Mathematics</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/480</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 480 in the Australian Thesaurus of Education Descriptors, covering mathematics.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="820">Measurement</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/820</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 820 in the Australian Thesaurus of Education Descriptors, covering measurement.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="230">Mental health</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/230</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 230 in the Australian Thesaurus of Education Descriptors, covering mental health.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="640">Occupations</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/640</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 640 in the Australian Thesaurus of Education Descriptors, covering occupations.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="560">Peoples and cultures</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/560</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 560 in the Australian Thesaurus of Education Descriptors, covering peoples and cultures.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="470">Physical education and recreation</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/470</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 470 in the Australian Thesaurus of Education Descriptors, covering physical education and recreation.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="730">Publication / document types</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/730</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 730 in the Australian Thesaurus of Education Descriptors, covering publication / document types.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="460">Reading</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/460</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 460 in the Australian Thesaurus of Education Descriptors, covering reading.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="810">Research and theory</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/810</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 810 in the Australian Thesaurus of Education Descriptors, covering research and theory.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="490">Science and technology</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/490</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 490 in the Australian Thesaurus of Education Descriptors, covering science and technology.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="530">Social problems</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/530</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 530 in the Australian Thesaurus of Education Descriptors, covering social problems.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="520">Social processes and structures</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/520</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 520 in the Australian Thesaurus of Education Descriptors, covering social processes and structures.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="360">Students, teachers, educational personnel</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/360</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 360 in the Australian Thesaurus of Education Descriptors, covering students, teachers, educational personnel.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="830">Tests and scales</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/830</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 830 in the Australian Thesaurus of Education Descriptors, covering tests and scales.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+        <div class="entity">
+          <h3 id="510">The Individual in social context</h3>
+          <table>
+            <tr>
+              <td style="width:250px;">
+                <strong>IRI</strong>
+              </td>
+              <td>
+                <code>https://linked.data.gov.au/def/ated/SC/510</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://schema.org/description" title="A description of the item.">Description</a>
+              </td>
+              <td>Subject category 510 in the Australian Thesaurus of Education Descriptors, covering the individual in social context.</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource.">Is Defined By</a>
+              </td>
+              <td>This vocabulary</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div id="namespaces">
+        <h2>Namespaces</h2>
+        <dl>
+          <dt id=":">:</dt>
+          <dd>
+            <code>https://linked.data.gov.au/def/ated/SC/</code>
+          </dd>
+          <dt id="cs">cs</dt>
+          <dd>
+            <code>https://linked.data.gov.au/def/ated/SC</code>
+          </dd>
+          <dt id="rdf">rdf</dt>
+          <dd>
+            <code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code>
+          </dd>
+          <dt id="rdfs">rdfs</dt>
+          <dd>
+            <code>http://www.w3.org/2000/01/rdf-schema#</code>
+          </dd>
+          <dt id="schema">schema</dt>
+          <dd>
+            <code>https://schema.org/</code>
+          </dd>
+          <dt id="skos">skos</dt>
+          <dd>
+            <code>http://www.w3.org/2004/02/skos/core#</code>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div id="pylode">
+      <p>made by 
+        <a href="https://github.com/rdflib/pyLODE">
+          <span id="p">p</span>
+          <span id="y">y</span>
+          <span>LODE</span>
+        </a>
+        <a href="https://github.com/rdflib/pyLODE/release/3.5.1" id="version">3.5.1</a>
+        <span> with the </span>
+        <a href="https://linked.data.gov.au/def/vocpub" id="profile">VocPub</a>
+        <span>profile</span>
+      </p>
+    </div>
+    <div id="toc">
+      <h3>Table of Contents</h3>
+      <ul class="first">
+        <li>
+          <h4>
+            <a href="#metadata">Metadata</a>
+          </h4>
+        </li>
+        <li>
+          <h4>
+            <a href="#concept-hierarchy">Concepts Hierarchy</a>
+          </h4>
+        </li>
+        <li>
+          <h4>
+            <a href="#concepts">Concept Definitions</a>
+          </h4>
+        </li>
+        <li>
+          <h4>
+            <a href="#namespaces">Namespaces</a>
+          </h4>
+          <ul class="second">
+            <li>
+              <a href="#"></a>
+            </li>
+            <li>
+              <a href="#cs">cs</a>
+            </li>
+            <li>
+              <a href="#rdf">rdf</a>
+            </li>
+            <li>
+              <a href="#rdfs">rdfs</a>
+            </li>
+            <li>
+              <a href="#schema">schema</a>
+            </li>
+            <li>
+              <a href="#skos">skos</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>
+            <a href="#legend">Legend</a>
+          </h4>
+          <ul class="second"></ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
