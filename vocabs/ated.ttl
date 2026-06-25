@@ -1,6 +1,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ated: <https://linked.data.gov.au/def/ated/> .
 @prefix atedsc: <https://linked.data.gov.au/def/ated/SC/> .
+@prefix id: <http://id.loc.gov/vocabulary/identifiers/> .
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -12,7 +13,9 @@ ated:
     schema:publisher <https://ror.org/012x2n652> ;
     schema:creator <https://ror.org/012x2n652> ;
     schema:createdDate "2026-06-24"^^xsd:date ;
-    schema:modifiedDate "2026-06-24"^^xsd:date .
+    schema:modifiedDate "2026-06-24"^^xsd:date ;
+    schema:identifier "9780864316813"^^id:isbn
+    .
 
 <https://ror.org/012x2n652>
     a schema:Organization ;

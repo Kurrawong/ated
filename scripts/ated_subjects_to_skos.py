@@ -1,19 +1,14 @@
 #!/usr/bin/env python3
-"""Create the ATED subject classification SKOS scheme from ated.ttl."""
+"""Create the ATED subject category SKOS scheme from the ATED XML export."""
 
 from __future__ import annotations
 
 import argparse
-import re
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 
 SCHEME_IRI = "https://linked.data.gov.au/def/ated/SC"
-SUBJECT_PATTERN = re.compile(
-    r'dcterms:subject\s+"(?P<id>\d{3})\s+(?P<label>[^"]+)"@en'
-)
-
-
 def turtle_string(value: str) -> str:
     escaped = (
         value.replace("\\", "\\\\")
@@ -24,29 +19,31 @@ def turtle_string(value: str) -> str:
     return f'"{escaped}"@en'
 
 
-def extract_classifications(source: Path) -> dict[str, str]:
-    classifications: dict[str, str] = {}
-    for match in SUBJECT_PATTERN.finditer(source.read_text(encoding="utf-8")):
-        identifier = match.group("id")
-        label = match.group("label")
-        existing = classifications.get(identifier)
+def extract_categories(source: Path) -> dict[str, str]:
+    categories: dict[str, str] = {}
+    root = ET.parse(source).getroot()
+    for element in root.iter("SC"):
+        identifier, separator, label = element.text.strip().partition(" ")
+        if not separator or len(identifier) != 3 or not identifier.isdigit():
+            raise ValueError(f"Unrecognized subject category: {element.text!r}")
+        existing = categories.get(identifier)
         if existing is not None and existing != label:
             raise ValueError(
-                f"Subject classification {identifier} has conflicting labels: "
+                f"Subject category {identifier} has conflicting labels: "
                 f"{existing!r} and {label!r}"
             )
-        classifications[identifier] = label
+        categories[identifier] = label
 
-    if not classifications:
-        raise ValueError(f"No dcterms:subject classifications found in {source}")
-    return classifications
+    if not categories:
+        raise ValueError(f"No subject categories found in {source}")
+    return categories
 
 
 def convert(source: Path, destination: Path) -> None:
-    classifications = extract_classifications(source)
+    categories = extract_categories(source)
     concept_iris = [
         f"atedsc:{identifier}"
-        for identifier in sorted(classifications, key=int)
+        for identifier in sorted(categories, key=int)
     ]
 
     lines = [
@@ -57,13 +54,13 @@ def convert(source: Path, destination: Path) -> None:
         "",
         "atedsc:",
         "    a skos:ConceptScheme ;",
-        '    skos:prefLabel "ATED Subject Classifications"@en ;',
-        '    skos:definition "Subject classifications for ATED concepts" ;',
+        '    skos:prefLabel "ATED Subject Categories"@en ;',
+        '    skos:definition "Subject categories for ATED concepts" ;',
         f"    skos:hasTopConcept {', '.join(concept_iris)} ;",
         "    schema:publisher <https://ror.org/012x2n652> ;",
         "    schema:creator <https://ror.org/012x2n652> ;",
         '    schema:createdDate "2026-06-24"^^xsd:date ;',
-        '    schema:modifiedDate "2026-06-24"^^xsd:date .',
+        '    schema:modifiedDate "2026-06-25"^^xsd:date .',
         "",
         "<https://ror.org/012x2n652>",
         "    a schema:Organization ;",
@@ -71,8 +68,9 @@ def convert(source: Path, destination: Path) -> None:
         '    schema:url "https://www.acer.org/"^^xsd:anyURI .',
     ]
 
-    for identifier in sorted(classifications, key=int):
-        label = classifications[identifier]
+    for identifier in sorted(categories, key=int):
+        label = categories[identifier]
+        definition_label = label.lower()
         lines.extend(
             [
                 "",
@@ -82,7 +80,7 @@ def convert(source: Path, destination: Path) -> None:
                 "    skos:topConceptOf atedsc: ;",
                 f"    skos:prefLabel {turtle_string(label)} ;",
                 "    skos:definition "
-                f"{turtle_string(f'Subject classification {identifier} {label}')} .",
+                f"{turtle_string(f'Subject category {identifier} in the Australian Thesaurus of Education Descriptors, covering {definition_label}.')} .",
             ]
         )
 
