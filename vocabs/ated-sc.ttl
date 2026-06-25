@@ -5,8 +5,8 @@
 
 atedsc:
     a skos:ConceptScheme ;
-    skos:prefLabel "ATED Subject Classifications"@en ;
-    skos:definition "Subject classifications for ATED concepts" ;
+    skos:prefLabel "ATED Subject Categories"@en ;
+    skos:definition "Subject categoriess for ATED concepts" ;
     skos:hasTopConcept atedsc:110, atedsc:120, atedsc:210, atedsc:220, atedsc:230, atedsc:240, atedsc:310, atedsc:320, atedsc:330, atedsc:340, atedsc:350, atedsc:360, atedsc:400, atedsc:410, atedsc:420, atedsc:430, atedsc:440, atedsc:450, atedsc:460, atedsc:470, atedsc:480, atedsc:490, atedsc:510, atedsc:520, atedsc:530, atedsc:540, atedsc:550, atedsc:560, atedsc:610, atedsc:620, atedsc:630, atedsc:640, atedsc:650, atedsc:710, atedsc:720, atedsc:730, atedsc:810, atedsc:820, atedsc:830, atedsc:910, atedsc:920 ;
     schema:publisher <https://ror.org/012x2n652> ;
     schema:creator <https://ror.org/012x2n652> ;
