@@ -3,7 +3,6 @@ PREFIX atedsc: <https://linked.data.gov.au/def/ated/SC/>
 PREFIX cs: <https://linked.data.gov.au/def/ated>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX id: <http://id.loc.gov/vocabulary/identifiers/>
-PREFIX ns1: <https://linked.data.gov.au/def/ated/skos:>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX schema: <https://schema.org/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -14,7 +13,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:isDefinedBy cs: ;
     skos:inScheme cs: ;
     skos:prefLabel "Foetal alcohol syndrome"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :manMachineInterface
@@ -22,7 +21,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:isDefinedBy cs: ;
     skos:inScheme cs: ;
     skos:prefLabel "Man machine interface"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :teachingPersistence
@@ -30,7 +29,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:isDefinedBy cs: ;
     skos:inScheme cs: ;
     skos:prefLabel "Teaching persistence"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :torresStraitIslanderHealth
@@ -38,7 +37,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     rdfs:isDefinedBy cs: ;
     skos:inScheme cs: ;
     skos:prefLabel "Torres Strait Islander health"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :adventistSchools
@@ -2411,7 +2410,7 @@ sometimes consecutively"""@en ;
         :economics ,
         :internationalTrade ;
     skos:scopeNote "System of business conducted in a particular economy"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :computerAlgebraSystems
@@ -7822,7 +7821,7 @@ within a small geographic area, typically a single building"""@en ;
     skos:prefLabel "Measures"@en ;
     skos:related :measurement ;
     skos:scopeNote "Procedures, devices or tools used to rate the characteristics of persons, organisations or things"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :mechanicalEngineering
@@ -9586,7 +9585,7 @@ educational institutions to which they are related - typically facilities such a
         :evaluationMethods ,
         :metaAnalysis ;
     skos:scopeNote "Combination of separate elements to form a coherent whole (Note: use as a major descriptor for discussions of synthesis as a process - use as a minor descriptor for documents that are a synthesis of ideas, etc.)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :tabletComputers
@@ -10463,7 +10462,7 @@ educational institutions to which they are related - typically facilities such a
         :computers ,
         :ictInEducation ;
     skos:scopeNote "Availability of one or more computers for use by an individual or a community"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :accreditationStandards
@@ -12308,7 +12307,7 @@ behaviours, personality traits, biological traits, etc.)"""@en ;
         :educationalResearch ,
         :educationalTheories ;
     skos:scopeNote "The study of the body of scientific, praxiological and philosophical knowledge about the entire educational process"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :electricBatteries
@@ -14312,7 +14311,7 @@ structures, as well as related harbour and dock technology"""@en ;
         :safety ,
         :weather ;
     skos:scopeNote "Calamitous occurrences produced by natural forces, often widespread and generally resulting in distress, loss, or material damage (eg. floods, cyclones, tornados, earthquakes, droughts)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :negativeReinforcement
@@ -18785,7 +18784,7 @@ under similar working conditions -- frequently advocated to redress sex-based pa
         :publicAffairsEducation ,
         :socialStudies ,
         :worldAffairs ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :cyberbullying
@@ -19890,7 +19889,7 @@ production, and marketing of clothing"""@en ;
         :internationalTrade ,
         :knowledgeEconomy ;
     skos:scopeNote "A theory or approach which notes an increasingly singular world society in terms of social, cultural, scientific, economic and humanistic factors"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :governmentLibraries
@@ -20709,7 +20708,7 @@ crisis counselling"""@en ;
         :academicEducation ,
         :generalEducation ,
         :technology ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :libraryAssociations
@@ -21871,7 +21870,7 @@ crisis counselling"""@en ;
         :medicalServices ,
         :therapy ;
     skos:scopeNote "Results or consequences of personal health treatment (medical, psychological, etc.)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :paintingIndustrialArts
@@ -22446,7 +22445,7 @@ crisis counselling"""@en ;
         :programProposals ,
         :programs ,
         :reports ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :programImplementation
@@ -30908,7 +30907,7 @@ government policy and legislation - excludes military service (Note: for people 
         :postdoctoralEducation ,
         :specialists ;
     skos:scopeNote "Concentration of interest and effort, or restriction of function, to a particular aspect of some larger area of endeavour (such as a field of study, occupation, etc.) - also, the process of progressive differentiation of functions"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :speechEvaluation
@@ -31280,7 +31279,7 @@ government policy and legislation - excludes military service (Note: for people 
         :success ,
         :sustainableDevelopment ;
     skos:scopeNote "Ability of or potential for an individual, organisation, program or system to continue and/or prosper"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :symbolsLiterary
@@ -31352,7 +31351,7 @@ government policy and legislation - excludes military service (Note: for people 
         :taxRates ,
         :taxes ;
     skos:scopeNote "The measure of a community's or society's willingness to tax itself"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :taxRates
@@ -34945,7 +34944,7 @@ risk or injury to health and impaired social functioning
         :studentWritingModels ,
         :universityEnglish ;
     skos:scopeNote "Note: for the teaching of English as a second language, coordinate \"Second language teaching\" and \"English (Second language)\""@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :enrolmentRate
@@ -38590,7 +38589,7 @@ precise term if possible)"""@en ;
         :wildlifeManagement ;
     skos:scopeNote """Entertainment or relaxation gained from activity or
 inactivity"""@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :referral
@@ -42239,7 +42238,7 @@ established criteria"""@en ;
         :peace ,
         :peaceEducation ,
         :war ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :disciplinePolicy
@@ -45705,7 +45704,7 @@ blocked, either by internal or external influences"""@en ;
         :educationWorkRelationship ,
         :influences ;
     skos:scopeNote "Circumstances or conditions that make possible any actions leading to betterment - includes the absence of barriers that prevent such possibilities (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :opticalDataDisks
@@ -49203,7 +49202,7 @@ fitness for an administrative or management position"""@en ;
         :veterinaryMedicine ,
         :zoology ;
     skos:scopeNote "Note: use a more specific term if possible"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :aptitudeTreatmentInteraction
@@ -50849,7 +50848,7 @@ ideas"""@en ;
         :progressiveEducation ,
         :theoryPracticeRelationship ;
     skos:scopeNote "Customary operations in education, from the educational system as a whole to the individual classroom or teacher (Note: use a more precise term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :educationalVouchers
@@ -51757,7 +51756,7 @@ status, health, ethnicity, etc."""@en ;
 activity, sometimes commemorating religious, cultural or
 other special events (Note: if appropriate, use the more
 specific term "Religious holidays")"""@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :homePrograms
@@ -51820,7 +51819,7 @@ specific term "Religious holidays")"""@en ;
         :literature ,
         :moods ,
         :personalityTraits ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :idioms
@@ -52588,7 +52587,7 @@ user's specifications"""@en ;
         :mediaSelection ,
         :resources ;
     skos:scopeNote "Channels or agencies of communication (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :medicalCareEvaluation
@@ -53569,7 +53568,7 @@ user's specifications"""@en ;
         :preservation ,
         :preventiveMedicine ,
         :riskManagement ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :primaryHealthCare
@@ -59220,7 +59219,7 @@ activities"""@en ;
         :knowledgeManagement ,
         :knowledgeRepresentation ,
         :learning ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :knowledgeEconomy
@@ -60872,7 +60871,7 @@ professional organisations"""@en ;
         :probability ,
         :reliability ,
         :riskManagement ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :roleOfEducation
@@ -63074,7 +63073,7 @@ rehabilitation"""@en ;
         :parentingSkills ,
         :parentsAsTeachers ;
     skos:scopeNote "Care of children by parents, guardians or other primary caregivers (Note: see also \"Day care\")"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :christianity
@@ -63835,7 +63834,7 @@ rehabilitation"""@en ;
     skos:scopeNote """Distinguishing elements or factors which differentiate one
 entity from another (Note: use a more specific term if
 possible)"""@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :difficultyLevel
@@ -64735,7 +64734,7 @@ expenditure of energy, time, money, or materials"""@en ;
         :guidancePersonnel ,
         :guidancePrograms ;
     skos:scopeNote "Process of assisting individuals and groups to develop realistic and satisfying goals, plans, and activities (Note: \"Counselling\" is one aspect of the total process of \"Guidance\")"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :gynaecology
@@ -66836,7 +66835,7 @@ person is expected to do"""@en ;
         :privatisation ,
         :publicSector ;
     skos:scopeNote "The area of a nation's economy under private, rather than governmental, control"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :productionTechniques
@@ -66994,7 +66993,7 @@ person is expected to do"""@en ;
         :publicEducation ,
         :publicPolicy ;
     skos:scopeNote "The area of a nation's economy under governmental, rather than private, control"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :qualityManagement
@@ -68934,7 +68933,7 @@ deemed appropriate to one sex rather than the other"""@en ;
         :suspension ,
         :universityAttendance ;
     skos:scopeNote "Early termination of participation in a class, grade or at an educational institution for reasons such as transfer, dropping out or for health reasons"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :woodworking
@@ -70348,7 +70347,7 @@ their objectives, obligations, or functions"""@en ;
         :diagrams ,
         :measurement ;
     skos:scopeNote "Information, often numerical and especially in a form suitable for processing by a computer or for other analysis"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :decentralisation
@@ -70625,7 +70624,7 @@ their objectives, obligations, or functions"""@en ;
         :reentryStudents ,
         :schoolStatistics ,
         :trendAnalysis ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :effectSize
@@ -71013,7 +71012,7 @@ control group alone"""@en ;
         :legitimation ,
         :teacherEducationCurriculum ;
     skos:scopeNote "The philosophy, social forces, institutions, and human relations upon which the formal educational system is based"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :genderEquity
@@ -72204,7 +72203,7 @@ control group alone"""@en ;
         :obsolescence ,
         :troubleshooting ;
     skos:scopeNote "Preservation or continuance of a condition"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :markovProcesses
@@ -78119,7 +78118,7 @@ document or journal article (Note: include descriptors to identify the foreign c
         :telecommunications ,
         :television ;
     skos:scopeNote "Series of points interconnected by communication channels (Note: use more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :neurologicalOrganisation
@@ -80269,7 +80268,7 @@ Peninsula (Australia) from Papua New Guinea, and links the Coral and Arafura Sea
         :knowledgeManagement ,
         :usersInformation ;
     skos:scopeNote "Means, processes, and rights related to obtaining or providing information - also, the degree of information availability"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :admissionsOfficers
@@ -83015,7 +83014,7 @@ phenomenon in totality, rather than as constituent parts"""@en ;
         :quantumMechanics ,
         :relativity ,
         :weightMass ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :mediaSelection
@@ -83645,7 +83644,7 @@ phenomenon in totality, rather than as constituent parts"""@en ;
         :plantPathology ,
         :schoolGardens ;
     skos:scopeNote "Nucleated multicellular organisms that contain chlorophyll and have rigid cell walls - some classifications include bacteria, unicellular algae, and/or fungi (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :poverty
@@ -84969,7 +84968,7 @@ interpretation of tests (Note: do not confuse with
         :tourism ,
         :trafficControl ,
         :travel ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :trustsFinancial
@@ -89051,7 +89050,7 @@ control or ownership to the private sector"""@en ;
         :qualifications ,
         :talent ;
     skos:scopeNote "The potential ability of an individual to perform an as yet unlearned task, skill, or act"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :aspiration
@@ -89968,7 +89967,7 @@ control or ownership to the private sector"""@en ;
         :screeningTests ,
         :troubleshooting ;
     skos:scopeNote "Recognition of the attributes by which an individual, condition, thing, etc. can be classified"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :incidence
@@ -90114,7 +90113,7 @@ control or ownership to the private sector"""@en ;
     skos:scopeNote """Action performed to direct or influence behaviour (Note: if
 possible, use "Crisis intervention," "Early intervention,"
 or other, more precise terminology)"""@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :investment
@@ -90142,7 +90141,7 @@ or other, more precise terminology)"""@en ;
         :productivity ,
         :returnOnInvestment ,
         :trustsFinancial ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :itemResponseTheory
@@ -90687,7 +90686,7 @@ successful in satisfying their objectives or functions"""@en ;
         :risk ,
         :socialIndicators ;
     skos:scopeNote "Process or act of foretelling future events, conditions, outcomes, or trends on the basis of current information"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :prenatalInfluences
@@ -90966,7 +90965,7 @@ management."""@en ;
         :recordkeeping ,
         :recordsManagement ,
         :reports ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :reinforcement
@@ -91849,7 +91848,7 @@ psychic, or intellectual support"""@en ;
         :peace ,
         :socialStudies ,
         :worldHistory ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :writingEvaluation
@@ -93004,7 +93003,7 @@ psychic, or intellectual support"""@en ;
         :universityAdministration ,
         :universityGoverningCouncils ;
     skos:scopeNote "The policy-making, objective-setting, and exercise of authority in an organisation, institution, or agency - includes administrative or management functions to the extent that they relate to the execution of policy and authority"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :grading
@@ -93444,7 +93443,7 @@ size, demographics, and governance"""@en ;
         :labourers ,
         :staffUtilisation ;
     skos:scopeNote "Human activity that provides the goods and services in an economy -- also, the services performed by workers for wages as distinguished from those rendered by entrepreneurs for profits (Note: use for general works and theory - use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :landUse
@@ -94325,7 +94324,7 @@ administrative, instructional, or service functions"""@en ;
     skos:scopeNote """Organised functions designed to meet individual or public
 needs, or to support some other organised function or
 activity (Note: use a more specific term if possible)"""@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :sexDiscrimination
@@ -96447,7 +96446,7 @@ organisations that involve more than one country"""@en ;
     skos:scopeNote """Governing principles that serve as guidelines or rules for
 decision making and action in a given area (Note: use a
 more specific term if possible)"""@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :portfoliosBackgroundMaterials
@@ -96707,7 +96706,7 @@ more specific term if possible)"""@en ;
         :technologyTransfer ,
         :theoryPracticeRelationship ;
     skos:scopeNote "Includes basic research, applied research, and the resultant development of new products, processes, services, or programs -- evaluation and dissemination may be important collateral functions"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :revolution
@@ -97116,7 +97115,7 @@ more specific term if possible)"""@en ;
         :systemsApproach ,
         :systemsDevelopment ;
     skos:scopeNote "Sets of things, processes or activities that fit together to form one complex whole"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :teacherResponsibility
@@ -97665,7 +97664,7 @@ more specific term if possible)"""@en ;
         :transferPrograms ,
         :transitions ;
     skos:scopeNote "Systematic coordination of course and/or program content within and between educational institutions and sectors, to facilitate the continuous and efficient progress of students from grade to grade, school to school, educational level to educational level, and from educational settings to the working world"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :audienceResponse
@@ -98661,7 +98660,7 @@ techniques"""@en ;
         :retrenchment ,
         :taxRates ;
     skos:scopeNote "Actual payments, or commitments to make future payments, for something received (Note: do not confuse with \"Costs\")"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :futuresOfSociety
@@ -98700,7 +98699,7 @@ techniques"""@en ;
         :trendAnalysis ,
         :values ,
         :worldAffairs ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :genetics
@@ -99272,7 +99271,7 @@ techniques"""@en ;
         :readingWritingRelationship ,
         :writingSkills ;
     skos:scopeNote "Ability to read and write - also, communication with written or printed symbols (i.e., reading and writing). (Note: for other concepts of literacy, relating to competence in a particular skill set such as information literacy or cultural literacy, see terms under \"Multiple literacies\")"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :literaryCriticism
@@ -100588,7 +100587,7 @@ temperature, humidity, and air velocity"""@en ;
         :studentRecruitment ,
         :transitionPrograms ;
     skos:scopeNote "Admission to an educational institution"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :botany
@@ -101293,7 +101292,7 @@ appraise individuals, organisations, or things"""@en ;
         :slavery ,
         :socialJustice ,
         :socialValues ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :geography
@@ -105038,7 +105037,7 @@ objectives, obligations, or functions"""@en ;
         :resources ,
         :satisfaction ;
     skos:scopeNote "Conditions or factors necessary for optimal function, development, or well-being, the lack of which may impair efficiency or trigger action towards fulfilment (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :objectives
@@ -105075,7 +105074,7 @@ objectives, obligations, or functions"""@en ;
         :success ,
         :taskAnalysis ;
     skos:scopeNote "Aims or ends towards which effort is directed (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :phonology
@@ -105183,7 +105182,7 @@ objectives, obligations, or functions"""@en ;
         :publicPolicy ,
         :voting ;
     skos:scopeNote "Activities concerned with guiding or influencing governmental policy, including winning and holding control over a governing body"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :pollution
@@ -106087,7 +106086,7 @@ objectives, obligations, or functions"""@en ;
         :schemataCognition ,
         :selfEfficacy ;
     skos:scopeNote "Frameworks or forms of thinking that can change with age and experience"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :communityPrograms
@@ -106280,7 +106279,7 @@ objectives, obligations, or functions"""@en ;
         :salaries ,
         :supplyAndDemand ;
     skos:scopeNote "Amount charged, but not necessarily paid, for something (Note: do not confuse with \"Expenditures\")"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :developmentalStages
@@ -106781,7 +106780,7 @@ communication with the central processor"""@en ;
         :subjectSelectionStudents ,
         :vocationalEducation ;
     skos:scopeNote "Applicability of what is taught by educational institutions to the needs and interests of students and society"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :responsibility
@@ -106818,7 +106817,7 @@ communication with the central processor"""@en ;
         :riskManagement ,
         :role ;
     skos:scopeNote "The process or act of fulfilling a duty, obligation, burden, or trust (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :skilledOccupations
@@ -107044,7 +107043,7 @@ communication with the central processor"""@en ;
         :workExperience ,
         :workLifeExpectancy ;
     skos:scopeNote "The progressively developing sequences of related occupational roles or work experiences through which individuals move during their working lives, often with increasing prestige and rewards - also, the intended sequence of such roles established by individuals as part of their life plans"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :chemistry
@@ -107422,7 +107421,7 @@ communication with the central processor"""@en ;
         :musculoskeletalSystem ,
         :physicalActivityLevel ,
         :physiology ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :income
@@ -107943,7 +107942,7 @@ related to the skills the test is measuring as a whole"""@en ;
         :readiness ,
         :testWiseness ;
     skos:scopeNote "The degree of actual power present in an organism or system to perform a given physical or mental act (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :achievementTests
@@ -108752,7 +108751,7 @@ related to the skills the test is measuring as a whole"""@en ;
         :staffUtilisation ,
         :trainingPrograms ;
     skos:scopeNote "The structure or framework of formal and functional relations that unites the parts of a system into a coherent whole - also, the process by which such a structure is identified and established (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :participation
@@ -109036,7 +109035,7 @@ related to the skills the test is measuring as a whole"""@en ;
         :selfManagement ,
         :trustResponsibilityGovernment ;
     skos:scopeNote "The right, power, opportunity, etc. of both individuals and peoples to determine their own destinies"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :studentBehaviour
@@ -109195,7 +109194,7 @@ related to the skills the test is measuring as a whole"""@en ;
         :specialEducation ,
         :therapeuticEnvironment ,
         :therapists ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :visualArts
@@ -109947,7 +109946,7 @@ difficulties, see "Emotional problems")"""@en ;
         :teachingEffectiveness ,
         :universityOutcomesAssessment ;
     skos:scopeNote "Results or consequences of education (Note: use only for materials indicating actual results attained - for discussions of desired results, use \"Educational objectives,\" \"Student educational objectives,\" etc.)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :personalAutonomy
@@ -110437,7 +110436,7 @@ material resources within a primary or secondary school"""@en ;
         :theatreArts ,
         :visualArts ;
     skos:scopeNote "Broad term for the processes and resulting products of aesthetic expression within the visual arts (Note: for the discipline of creating and studying art, see Visual arts)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :behaviouralObjectives
@@ -111258,7 +111257,7 @@ of the two conditions)"""@en ;
         :problemBasedLearning ,
         :problemSolving ;
     skos:scopeNote "Difficulties or obstacles not easily overcome (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :readingSkills
@@ -111817,7 +111816,7 @@ nonpreferred reference to "Athletics")"""@en ;
         :resistanceToChange ,
         :revolution ;
     skos:scopeNote "Act or process of altering, modifying, transforming, substituting, or otherwise making or becoming different - includes deviation from established character, condition, sequence, or direction (Note: do not confuse with \"Development,\" which refers to sequential, progressive changes - use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :citizenParticipation
@@ -113094,7 +113093,7 @@ possible) (Note: use "Learning environment" for non-formal or technological envi
         :roleTheory ,
         :status ;
     skos:scopeNote "Functions or tasks expected of or performed by individuals, groups, or things (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :safety
@@ -113137,7 +113136,7 @@ possible) (Note: use "Learning environment" for non-formal or technological envi
         :safetyEquipment ,
         :securityPersonnel ,
         :trafficAccidents ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :socialAttitudes
@@ -113401,7 +113400,7 @@ possible) (Note: use "Learning environment" for non-formal or technological envi
         :interests ,
         :participation ;
     skos:scopeNote "Pursuits or experiences, usually requiring active participation, engaged in because they are of intrinsic interest or lead to some goal sought by the participant (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :basicSkills
@@ -113668,7 +113667,7 @@ well-being of an individual, enterprise, community, region, etc."""@en ;
         :taxes ,
         :trustsFinancial ;
     skos:scopeNote "Legal possession of material or intellectual property"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :personnelPolicy
@@ -114365,7 +114364,7 @@ well-being of an individual, enterprise, community, region, etc."""@en ;
         :testing ,
         :tests ;
     skos:scopeNote "Process of obtaining a numerical description of the extent to which persons, organisations, or things possess specified characteristics (Note: see also \"Testing\" and \"Evaluation\")"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :organisationalDevelopment
@@ -116147,7 +116146,7 @@ capital and labour"""@en ;
         :useStudies ,
         :wastes ;
     skos:scopeNote "Available means or assets, including sources of assistance, supply, or support (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :socialInfluences
@@ -116450,7 +116449,7 @@ capital and labour"""@en ;
         :structuralAnalysisLinguistics ,
         :verbalCommunication ;
     skos:scopeNote "The study of language (Note: this term is used primarily for material dealing with the field of linguistics as a whole - use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :motivation
@@ -116499,7 +116498,7 @@ capital and labour"""@en ;
         :success ,
         :workEthic ;
     skos:scopeNote "Forces that initiate, direct, and sustain individual or group behaviour in order to satisfy a need or attain a goal"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :nonprintMedia
@@ -117262,7 +117261,7 @@ capital and labour"""@en ;
         :teachingResearchRelationship ,
         :teachingSystems ;
     skos:scopeNote "Process by which knowledge, attitudes or skills are deliberately conveyed - includes the total instructional process from planning and implementation to evaluation and feedback (Note: use a more specific term if possible - for standard approaches see \"Teaching methods\")"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :training
@@ -117516,7 +117515,7 @@ capital and labour"""@en ;
         :schoolBuses ,
         :storage ;
     skos:scopeNote "Any instrument, machine, apparatus, or set of articles used in an operation or activity without losing its original shape or appearance (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :governmentAdministrativeBody
@@ -117766,7 +117765,7 @@ capital and labour"""@en ;
         :scientificMethodology ,
         :theoryPracticeRelationship ;
     skos:scopeNote "Generalisations or principles, supported by substantial evidence but not conclusively established, proposed as explanations of observed phenomena or of the relations in a given body of facts (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :academicStaff
@@ -117873,7 +117872,7 @@ capital and labour"""@en ;
         :success ,
         :talent ;
     skos:scopeNote "Accomplishment or success in bringing about a desired end (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :ecology
@@ -117974,7 +117973,7 @@ capital and labour"""@en ;
         :resources ,
         :wellBeing ;
     skos:scopeNote "Surrounding conditions, forces, or factors potentially capable of influencing, modifying, or interacting with an organism, material, or other entity (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :influences
@@ -118026,7 +118025,7 @@ capital and labour"""@en ;
         :role ,
         :variables ;
     skos:scopeNote "Factors directly or indirectly affecting the condition (behaviour, development, etc.) of an organism or entity, that alter some situation, or determine some result (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :informationDissemination
@@ -118284,7 +118283,7 @@ capital and labour"""@en ;
     skos:scopeNote """Specifically distinguishing qualities, properties,
 features, capabilities or character (Note: Use a more
 specific term if possible)"""@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :cognitiveSkills
@@ -118399,7 +118398,7 @@ specific term if possible)"""@en ;
         :methodsCourses ,
         :methodsResearch ;
     skos:scopeNote "Systematic approaches to the conduct of an operation or process -- includes steps of procedure, application of techniques, systems of reasoning or analysis, and the modes of inquiry employed by a science or discipline (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :professionalEducation
@@ -118507,7 +118506,7 @@ specific term if possible)"""@en ;
         :therapy ,
         :victimsOfCrime ;
     skos:scopeNote "Process of restoring individuals, through education and/or therapy, to the best possible level of physical, mental, emotional, social, or vocational functioning"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :business
@@ -118901,7 +118900,7 @@ the public for profit"""@en ;
         :socialPsychology ,
         :sociometricTechniques ;
     skos:scopeNote "Types of groups as opposed to types of people. For types of people see Population groups"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :problemSolving
@@ -119177,7 +119176,7 @@ the public for profit"""@en ;
         :verbalCommunication ,
         :wordFrequency ;
     skos:scopeNote "Systematic means of communicating ideas and feelings through the use of signs, gestures, words, and/or auditory symbols (Note: for natural languages and language families, see \"Languages\")"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :languageSkills
@@ -119348,7 +119347,7 @@ the public for profit"""@en ;
         :systemsApproach ,
         :timeManagement ;
     skos:scopeNote "The process of determining objectives and the means (activities, procedures, resources, etc.) for attaining them (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :professionalPersonnel
@@ -119524,7 +119523,7 @@ the public for profit"""@en ;
         :schoolCommunityRelationship ,
         :suburbs ;
     skos:scopeNote "Social groups linked by common interests through residence in a specific locality, or, whether or not in physical proximity, whose members perceive themselves as sharing a common ideology, interest, or other characteristic"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :crossCulturalStudies
@@ -119637,7 +119636,7 @@ the public for profit"""@en ;
         :researchAndDevelopmentCentres ,
         :technology ;
     skos:scopeNote "Progression from earlier to later stages of growth or organisation - - includes gradual realisation of potential, usually accompanied by advances in size, complexity, efficiency, etc. (Note: do not confuse with \"Change,\" which refers to alterations, modifications, etc., that are not sequential and progressive - use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :educationalAlternatives
@@ -119877,7 +119876,7 @@ the public for profit"""@en ;
         :theologicalEducation ,
         :traditionalism ;
     skos:scopeNote "Belief in some higher unseen power as entitled to reverence and worship"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :skills
@@ -119992,7 +119991,7 @@ the public for profit"""@en ;
         :valuesClarification ,
         :valuesEducation ;
     skos:scopeNote "Principles and standards that determine the degree of worth or merit of an object or act"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :colleges
@@ -120742,7 +120741,7 @@ term if possible)"""@en ;
         :role ,
         :schematicStudies ;
     skos:scopeNote "Type or mode of association between or among physically existing entities, e.g., people, institutions, objects, ideas, processes (Note: use a more specific term if possible - do not confuse with \"Correlation\")"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :administration
@@ -121261,7 +121260,7 @@ bachelors and first professional degrees"""@en ;
         :synthesis ,
         :taskAnalysis ;
     skos:scopeNote "Processes based on perception, introspection, or memory through which an individual obtains knowledge or conceptual understanding, e.g., perceiving, judging, abstracting, reasoning, imagining, remembering, and anticipating (Note: use a more specific term if possible - see displays of the narrower terms)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :literature
@@ -121463,7 +121462,7 @@ bachelors and first professional degrees"""@en ;
         :specialNeedsStudents ,
         :therapy ;
     skos:scopeNote "Physical, mental, or sensory impairments that render major life activities more difficult (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :facilities
@@ -121535,7 +121534,7 @@ bachelors and first professional degrees"""@en ;
         :spaceUtilisation ,
         :structuralElementsConstruction ;
     skos:scopeNote "Any physical structures or spaces constructed, installed or established to perform particular functions or to serve particular ends, such as for the holding of sporting contests (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :financialSupport
@@ -121668,7 +121667,7 @@ bachelors and first professional degrees"""@en ;
         :resourceMaterials ,
         :systematicReviews ,
         :writingForPublication ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :communicationThoughtTransfer
@@ -121739,7 +121738,7 @@ bachelors and first professional degrees"""@en ;
         :rhetoricalTheory ,
         :socialNetworks ;
     skos:scopeNote "Transmission and reception of signals or meanings through a system of symbols (codes, gestures, language, etc.) common to sender and receiver (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :languages
@@ -121815,7 +121814,7 @@ bachelors and first professional degrees"""@en ;
         :teachingLanguage ,
         :wordFrequency ;
     skos:scopeNote "Broad term under which languages from particular ethnic or geographic groups are gathered. Terms such as 'Uncommonly taught languages' and 'Second languages' are grouped under the broader term 'Language'"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :experientialLearning
@@ -122340,7 +122339,7 @@ bachelors and first professional degrees"""@en ;
         :teachingModels ,
         :values ;
     skos:scopeNote "Rules, principles, or criteria by which levels or degrees of adequacy, acceptability, quantity, quality, or value are measured or judged (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :statisticalAnalysis
@@ -122495,7 +122494,7 @@ bachelors and first professional degrees"""@en ;
         :timeFactorsLearning ,
         :trainingPackages ;
     skos:scopeNote "Process of acquiring knowledge, attitudes, or skills from study, instruction, or experience (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :ethnicGroups
@@ -122645,7 +122644,7 @@ bachelors and first professional degrees"""@en ;
         :ventilation ,
         :waterQuality ,
         :waterTreatment ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :reading
@@ -122878,7 +122877,7 @@ consciously held (as are beliefs) nor readily verbalised
 (as are opinions), they are characterised as either
 affective or valuative (Note: use a more specific term if
 possible)"""@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :economics
@@ -123034,7 +123033,7 @@ possible)"""@en ;
         :sleep ,
         :sociology ;
     skos:scopeNote "The aggregate of observable responses of an organism to internal and external stimuli (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :employment
@@ -123115,7 +123114,7 @@ possible)"""@en ;
         :workEnvironment ,
         :workingHours ;
     skos:scopeNote "State or condition of engaging in remunerative work (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :culture
@@ -123196,7 +123195,7 @@ possible)"""@en ;
         :socialHistory ,
         :socioculturalPatterns ;
     skos:scopeNote "Set of patterns, of and for behaviour, that regulate interaction and enable mutual communication among a plurality of people, establishing them into a particular and distinct human group - occasionally used in the more limited sense of the intellectual and aesthetic products of culture (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :populationGroups
@@ -123362,7 +123361,7 @@ possible)"""@en ;
         :trainingPackages ,
         :writingAcrossTheCurriculum ;
     skos:scopeNote "Plan incorporating a structured series of intended learning outcomes and associated learning experiences - generally organised as a related combination or series of courses (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :testing
@@ -123531,7 +123530,7 @@ possible)"""@en ;
         :technologyTransfer ,
         :tradeCourses ,
         :vocationalEducation ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :evaluationMethods
@@ -123706,7 +123705,7 @@ objectives, standards, or criteria"""@en ;
         :teachingStyles ,
         :trustPsychology ,
         :wellBeing ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :writingComposition
@@ -123976,7 +123975,7 @@ objectives, standards, or criteria"""@en ;
         :userSatisfactionInformation ,
         :validity ;
     skos:scopeNote "Determining merit of persons, organisations, or things in relation to stated objectives, standards, or criteria (Note: use a more specific term if possible - see also \"Testing\" and \"Measurement\")"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :tests
@@ -124272,7 +124271,7 @@ objectives, standards, or criteria"""@en ;
         :programValidation ,
         :projectManagement ;
     skos:scopeNote "Schedules or plans for sequences of activities directed towards desired results (Note: use a more specific term if possible)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :research
@@ -124735,7 +124734,7 @@ institutions such as medical schools)"""@en ;
         :workEnvironment ,
         :workLifeExpectancy ;
     skos:scopeNote "Categories of job or work specialisations, as characterised by occupational conditions and attributes, professional and societal relations, career lines, roles and responsibilities - includes duties, skill levels, status, pay or other distinguishing factors (Note: use a more specific term if possible - do not confuse terms in the \"Occupations\" and \"Employees\" hierarchies)"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 :teachers
@@ -125048,7 +125047,7 @@ institutions such as medical schools)"""@en ;
         :teachingProcess ,
         :training ;
     skos:scopeNote "Process of imparting or obtaining knowledge, attitudes, skills, or socially valued qualities of character or behaviour - includes the philosophy, purposes, programs, methods, organisational patterns, etc., of the entire educational process as most broadly conceived"@en ;
-    ns1:topConceptOf cs: ;
+    skos:topConceptOf cs: ;
 .
 
 cs:
