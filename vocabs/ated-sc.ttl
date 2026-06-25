@@ -1,306 +1,390 @@
-@prefix atedsc: <https://linked.data.gov.au/def/ated/SC/> .
-@prefix schema: <https://schema.org/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+PREFIX atedsc: <https://linked.data.gov.au/def/ated/SC/>
+PREFIX schema: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-atedsc:
-    a skos:ConceptScheme ;
-    skos:prefLabel "ATED Subject Categories"@en ;
-    skos:definition "Subject categories for ATED concepts" ;
-    skos:hasTopConcept atedsc:110, atedsc:120, atedsc:210, atedsc:220, atedsc:230, atedsc:240, atedsc:310, atedsc:320, atedsc:330, atedsc:340, atedsc:350, atedsc:360, atedsc:400, atedsc:410, atedsc:420, atedsc:430, atedsc:440, atedsc:450, atedsc:460, atedsc:470, atedsc:480, atedsc:490, atedsc:510, atedsc:520, atedsc:530, atedsc:540, atedsc:550, atedsc:560, atedsc:610, atedsc:620, atedsc:630, atedsc:640, atedsc:650, atedsc:710, atedsc:720, atedsc:730, atedsc:810, atedsc:820, atedsc:830, atedsc:910, atedsc:920 ;
-    schema:publisher <https://ror.org/012x2n652> ;
-    schema:creator <https://ror.org/012x2n652> ;
-    schema:createdDate "2026-06-24"^^xsd:date ;
-    schema:modifiedDate "2026-06-25"^^xsd:date .
+atedsc:110
+    a skos:Concept ;
+    skos:definition "Subject category 110 in the Australian Thesaurus of Education Descriptors, covering learning and perception."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Learning and perception"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:120
+    a skos:Concept ;
+    skos:definition "Subject category 120 in the Australian Thesaurus of Education Descriptors, covering individual development and characteristics."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Individual development and characteristics"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:210
+    a skos:Concept ;
+    skos:definition "Subject category 210 in the Australian Thesaurus of Education Descriptors, covering health and safety."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Health and safety"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:220
+    a skos:Concept ;
+    skos:definition "Subject category 220 in the Australian Thesaurus of Education Descriptors, covering disabilities."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Disabilities"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:230
+    a skos:Concept ;
+    skos:definition "Subject category 230 in the Australian Thesaurus of Education Descriptors, covering mental health."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Mental health"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:240
+    a skos:Concept ;
+    skos:definition "Subject category 240 in the Australian Thesaurus of Education Descriptors, covering counselling."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Counselling"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:310
+    a skos:Concept ;
+    skos:definition "Subject category 310 in the Australian Thesaurus of Education Descriptors, covering educational process: classroom perspectives."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Educational process: classroom perspectives"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:320
+    a skos:Concept ;
+    skos:definition "Subject category 320 in the Australian Thesaurus of Education Descriptors, covering educational process: institutional perspectives."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Educational process: institutional perspectives"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:330
+    a skos:Concept ;
+    skos:definition "Subject category 330 in the Australian Thesaurus of Education Descriptors, covering educational process: societal perspectives."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Educational process: societal perspectives"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:340
+    a skos:Concept ;
+    skos:definition "Subject category 340 in the Australian Thesaurus of Education Descriptors, covering educational levels, qualifications and organisations."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Educational levels, qualifications and organisations"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:350
+    a skos:Concept ;
+    skos:definition "Subject category 350 in the Australian Thesaurus of Education Descriptors, covering curriculum organisation."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Curriculum organisation"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:360
+    a skos:Concept ;
+    skos:definition "Subject category 360 in the Australian Thesaurus of Education Descriptors, covering students, teachers, educational personnel."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Students, teachers, educational personnel"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:400
+    a skos:Concept ;
+    skos:definition "Subject category 400 in the Australian Thesaurus of Education Descriptors, covering curriculum subjects."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Curriculum subjects"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:410
+    a skos:Concept ;
+    skos:definition "Subject category 410 in the Australian Thesaurus of Education Descriptors, covering agriculture and natural resources."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Agriculture and natural resources"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:420
+    a skos:Concept ;
+    skos:definition "Subject category 420 in the Australian Thesaurus of Education Descriptors, covering arts."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Arts"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:430
+    a skos:Concept ;
+    skos:definition "Subject category 430 in the Australian Thesaurus of Education Descriptors, covering humanities."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Humanities"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:440
+    a skos:Concept ;
+    skos:definition "Subject category 440 in the Australian Thesaurus of Education Descriptors, covering languages."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Languages"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:450
+    a skos:Concept ;
+    skos:definition "Subject category 450 in the Australian Thesaurus of Education Descriptors, covering language and speech."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Language and speech"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:460
+    a skos:Concept ;
+    skos:definition "Subject category 460 in the Australian Thesaurus of Education Descriptors, covering reading."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Reading"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:470
+    a skos:Concept ;
+    skos:definition "Subject category 470 in the Australian Thesaurus of Education Descriptors, covering physical education and recreation."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Physical education and recreation"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:480
+    a skos:Concept ;
+    skos:definition "Subject category 480 in the Australian Thesaurus of Education Descriptors, covering mathematics."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Mathematics"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:490
+    a skos:Concept ;
+    skos:definition "Subject category 490 in the Australian Thesaurus of Education Descriptors, covering science and technology."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Science and technology"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:510
+    a skos:Concept ;
+    skos:definition "Subject category 510 in the Australian Thesaurus of Education Descriptors, covering the individual in social context."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "The Individual in social context"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:520
+    a skos:Concept ;
+    skos:definition "Subject category 520 in the Australian Thesaurus of Education Descriptors, covering social processes and structures."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Social processes and structures"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:530
+    a skos:Concept ;
+    skos:definition "Subject category 530 in the Australian Thesaurus of Education Descriptors, covering social problems."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Social problems"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:540
+    a skos:Concept ;
+    skos:definition "Subject category 540 in the Australian Thesaurus of Education Descriptors, covering bias and equity."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Bias and equity"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:550
+    a skos:Concept ;
+    skos:definition "Subject category 550 in the Australian Thesaurus of Education Descriptors, covering human geography."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Human geography"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:560
+    a skos:Concept ;
+    skos:definition "Subject category 560 in the Australian Thesaurus of Education Descriptors, covering peoples and cultures."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Peoples and cultures"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:610
+    a skos:Concept ;
+    skos:definition "Subject category 610 in the Australian Thesaurus of Education Descriptors, covering government and politics."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Government and politics"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:620
+    a skos:Concept ;
+    skos:definition "Subject category 620 in the Australian Thesaurus of Education Descriptors, covering economics and finance."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Economics and finance"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:630
+    a skos:Concept ;
+    skos:definition "Subject category 630 in the Australian Thesaurus of Education Descriptors, covering labour and employment."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Labour and employment"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:640
+    a skos:Concept ;
+    skos:definition "Subject category 640 in the Australian Thesaurus of Education Descriptors, covering occupations."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Occupations"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:650
+    a skos:Concept ;
+    skos:definition "Subject category 650 in the Australian Thesaurus of Education Descriptors, covering business, commerce and industry."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Business, commerce and industry"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:710
+    a skos:Concept ;
+    skos:definition "Subject category 710 in the Australian Thesaurus of Education Descriptors, covering information / communications systems."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Information / communications systems"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:720
+    a skos:Concept ;
+    skos:definition "Subject category 720 in the Australian Thesaurus of Education Descriptors, covering communications media."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Communications media"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:730
+    a skos:Concept ;
+    skos:definition "Subject category 730 in the Australian Thesaurus of Education Descriptors, covering publication / document types."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Publication / document types"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:810
+    a skos:Concept ;
+    skos:definition "Subject category 810 in the Australian Thesaurus of Education Descriptors, covering research and theory."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Research and theory"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:820
+    a skos:Concept ;
+    skos:definition "Subject category 820 in the Australian Thesaurus of Education Descriptors, covering measurement."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Measurement"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:830
+    a skos:Concept ;
+    skos:definition "Subject category 830 in the Australian Thesaurus of Education Descriptors, covering tests and scales."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Tests and scales"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:910
+    a skos:Concept ;
+    skos:definition "Subject category 910 in the Australian Thesaurus of Education Descriptors, covering equipment."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Equipment"@en ;
+    skos:topConceptOf atedsc: ;
+.
+
+atedsc:920
+    a skos:Concept ;
+    skos:definition "Subject category 920 in the Australian Thesaurus of Education Descriptors, covering facilities."@en ;
+    skos:inScheme atedsc: ;
+    skos:prefLabel "Facilities"@en ;
+    skos:topConceptOf atedsc: ;
+.
 
 <https://ror.org/012x2n652>
     a schema:Organization ;
     schema:name "Australian Council for Educational Research" ;
-    schema:url "https://www.acer.org/"^^xsd:anyURI .
+    schema:url "https://www.acer.org/"^^xsd:anyURI ;
+.
 
-atedsc:110
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Learning and perception"@en ;
-    skos:definition "Subject category 110 in the Australian Thesaurus of Education Descriptors, covering learning and perception."@en .
-
-atedsc:120
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Individual development and characteristics"@en ;
-    skos:definition "Subject category 120 in the Australian Thesaurus of Education Descriptors, covering individual development and characteristics."@en .
-
-atedsc:210
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Health and safety"@en ;
-    skos:definition "Subject category 210 in the Australian Thesaurus of Education Descriptors, covering health and safety."@en .
-
-atedsc:220
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Disabilities"@en ;
-    skos:definition "Subject category 220 in the Australian Thesaurus of Education Descriptors, covering disabilities."@en .
-
-atedsc:230
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Mental health"@en ;
-    skos:definition "Subject category 230 in the Australian Thesaurus of Education Descriptors, covering mental health."@en .
-
-atedsc:240
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Counselling"@en ;
-    skos:definition "Subject category 240 in the Australian Thesaurus of Education Descriptors, covering counselling."@en .
-
-atedsc:310
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Educational process: classroom perspectives"@en ;
-    skos:definition "Subject category 310 in the Australian Thesaurus of Education Descriptors, covering educational process: classroom perspectives."@en .
-
-atedsc:320
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Educational process: institutional perspectives"@en ;
-    skos:definition "Subject category 320 in the Australian Thesaurus of Education Descriptors, covering educational process: institutional perspectives."@en .
-
-atedsc:330
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Educational process: societal perspectives"@en ;
-    skos:definition "Subject category 330 in the Australian Thesaurus of Education Descriptors, covering educational process: societal perspectives."@en .
-
-atedsc:340
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Educational levels, qualifications and organisations"@en ;
-    skos:definition "Subject category 340 in the Australian Thesaurus of Education Descriptors, covering educational levels, qualifications and organisations."@en .
-
-atedsc:350
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Curriculum organisation"@en ;
-    skos:definition "Subject category 350 in the Australian Thesaurus of Education Descriptors, covering curriculum organisation."@en .
-
-atedsc:360
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Students, teachers, educational personnel"@en ;
-    skos:definition "Subject category 360 in the Australian Thesaurus of Education Descriptors, covering students, teachers, educational personnel."@en .
-
-atedsc:400
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Curriculum subjects"@en ;
-    skos:definition "Subject category 400 in the Australian Thesaurus of Education Descriptors, covering curriculum subjects."@en .
-
-atedsc:410
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Agriculture and natural resources"@en ;
-    skos:definition "Subject category 410 in the Australian Thesaurus of Education Descriptors, covering agriculture and natural resources."@en .
-
-atedsc:420
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Arts"@en ;
-    skos:definition "Subject category 420 in the Australian Thesaurus of Education Descriptors, covering arts."@en .
-
-atedsc:430
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Humanities"@en ;
-    skos:definition "Subject category 430 in the Australian Thesaurus of Education Descriptors, covering humanities."@en .
-
-atedsc:440
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Languages"@en ;
-    skos:definition "Subject category 440 in the Australian Thesaurus of Education Descriptors, covering languages."@en .
-
-atedsc:450
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Language and speech"@en ;
-    skos:definition "Subject category 450 in the Australian Thesaurus of Education Descriptors, covering language and speech."@en .
-
-atedsc:460
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Reading"@en ;
-    skos:definition "Subject category 460 in the Australian Thesaurus of Education Descriptors, covering reading."@en .
-
-atedsc:470
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Physical education and recreation"@en ;
-    skos:definition "Subject category 470 in the Australian Thesaurus of Education Descriptors, covering physical education and recreation."@en .
-
-atedsc:480
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Mathematics"@en ;
-    skos:definition "Subject category 480 in the Australian Thesaurus of Education Descriptors, covering mathematics."@en .
-
-atedsc:490
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Science and technology"@en ;
-    skos:definition "Subject category 490 in the Australian Thesaurus of Education Descriptors, covering science and technology."@en .
-
-atedsc:510
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "The Individual in social context"@en ;
-    skos:definition "Subject category 510 in the Australian Thesaurus of Education Descriptors, covering the individual in social context."@en .
-
-atedsc:520
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Social processes and structures"@en ;
-    skos:definition "Subject category 520 in the Australian Thesaurus of Education Descriptors, covering social processes and structures."@en .
-
-atedsc:530
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Social problems"@en ;
-    skos:definition "Subject category 530 in the Australian Thesaurus of Education Descriptors, covering social problems."@en .
-
-atedsc:540
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Bias and equity"@en ;
-    skos:definition "Subject category 540 in the Australian Thesaurus of Education Descriptors, covering bias and equity."@en .
-
-atedsc:550
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Human geography"@en ;
-    skos:definition "Subject category 550 in the Australian Thesaurus of Education Descriptors, covering human geography."@en .
-
-atedsc:560
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Peoples and cultures"@en ;
-    skos:definition "Subject category 560 in the Australian Thesaurus of Education Descriptors, covering peoples and cultures."@en .
-
-atedsc:610
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Government and politics"@en ;
-    skos:definition "Subject category 610 in the Australian Thesaurus of Education Descriptors, covering government and politics."@en .
-
-atedsc:620
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Economics and finance"@en ;
-    skos:definition "Subject category 620 in the Australian Thesaurus of Education Descriptors, covering economics and finance."@en .
-
-atedsc:630
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Labour and employment"@en ;
-    skos:definition "Subject category 630 in the Australian Thesaurus of Education Descriptors, covering labour and employment."@en .
-
-atedsc:640
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Occupations"@en ;
-    skos:definition "Subject category 640 in the Australian Thesaurus of Education Descriptors, covering occupations."@en .
-
-atedsc:650
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Business, commerce and industry"@en ;
-    skos:definition "Subject category 650 in the Australian Thesaurus of Education Descriptors, covering business, commerce and industry."@en .
-
-atedsc:710
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Information / communications systems"@en ;
-    skos:definition "Subject category 710 in the Australian Thesaurus of Education Descriptors, covering information / communications systems."@en .
-
-atedsc:720
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Communications media"@en ;
-    skos:definition "Subject category 720 in the Australian Thesaurus of Education Descriptors, covering communications media."@en .
-
-atedsc:730
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Publication / document types"@en ;
-    skos:definition "Subject category 730 in the Australian Thesaurus of Education Descriptors, covering publication / document types."@en .
-
-atedsc:810
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Research and theory"@en ;
-    skos:definition "Subject category 810 in the Australian Thesaurus of Education Descriptors, covering research and theory."@en .
-
-atedsc:820
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Measurement"@en ;
-    skos:definition "Subject category 820 in the Australian Thesaurus of Education Descriptors, covering measurement."@en .
-
-atedsc:830
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Tests and scales"@en ;
-    skos:definition "Subject category 830 in the Australian Thesaurus of Education Descriptors, covering tests and scales."@en .
-
-atedsc:910
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Equipment"@en ;
-    skos:definition "Subject category 910 in the Australian Thesaurus of Education Descriptors, covering equipment."@en .
-
-atedsc:920
-    a skos:Concept ;
-    skos:inScheme atedsc: ;
-    skos:topConceptOf atedsc: ;
-    skos:prefLabel "Facilities"@en ;
-    skos:definition "Subject category 920 in the Australian Thesaurus of Education Descriptors, covering facilities."@en .
+atedsc:
+    a skos:ConceptScheme ;
+    skos:definition "Subject categories for ATED concepts" ;
+    skos:hasTopConcept
+        atedsc:110 ,
+        atedsc:120 ,
+        atedsc:210 ,
+        atedsc:220 ,
+        atedsc:230 ,
+        atedsc:240 ,
+        atedsc:310 ,
+        atedsc:320 ,
+        atedsc:330 ,
+        atedsc:340 ,
+        atedsc:350 ,
+        atedsc:360 ,
+        atedsc:400 ,
+        atedsc:410 ,
+        atedsc:420 ,
+        atedsc:430 ,
+        atedsc:440 ,
+        atedsc:450 ,
+        atedsc:460 ,
+        atedsc:470 ,
+        atedsc:480 ,
+        atedsc:490 ,
+        atedsc:510 ,
+        atedsc:520 ,
+        atedsc:530 ,
+        atedsc:540 ,
+        atedsc:550 ,
+        atedsc:560 ,
+        atedsc:610 ,
+        atedsc:620 ,
+        atedsc:630 ,
+        atedsc:640 ,
+        atedsc:650 ,
+        atedsc:710 ,
+        atedsc:720 ,
+        atedsc:730 ,
+        atedsc:810 ,
+        atedsc:820 ,
+        atedsc:830 ,
+        atedsc:910 ,
+        atedsc:920 ;
+    skos:prefLabel "ATED Subject Categories"@en ;
+    schema:createdDate "2026-06-24"^^xsd:date ;
+    schema:creator <https://ror.org/012x2n652> ;
+    schema:modifiedDate "2026-06-25"^^xsd:date ;
+    schema:publisher <https://ror.org/012x2n652> ;
+.
