@@ -1,5 +1,6 @@
 PREFIX : <https://linked.data.gov.au/def/ated/SC/>
 PREFIX cs: <https://linked.data.gov.au/def/ated/SC>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX schema: <https://schema.org/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -58,6 +59,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :110
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 110 in the Australian Thesaurus of Education Descriptors, covering learning and perception."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Learning and perception"@en ;
@@ -66,6 +68,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :120
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 120 in the Australian Thesaurus of Education Descriptors, covering individual development and characteristics."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Individual development and characteristics"@en ;
@@ -74,6 +77,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :210
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 210 in the Australian Thesaurus of Education Descriptors, covering health and safety."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Health and safety"@en ;
@@ -82,6 +86,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :220
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 220 in the Australian Thesaurus of Education Descriptors, covering disabilities."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Disabilities"@en ;
@@ -90,6 +95,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :230
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 230 in the Australian Thesaurus of Education Descriptors, covering mental health."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Mental health"@en ;
@@ -98,6 +104,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :240
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 240 in the Australian Thesaurus of Education Descriptors, covering counselling."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Counselling"@en ;
@@ -106,6 +113,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :310
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 310 in the Australian Thesaurus of Education Descriptors, covering educational process: classroom perspectives."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Educational process: classroom perspectives"@en ;
@@ -114,6 +122,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :320
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 320 in the Australian Thesaurus of Education Descriptors, covering educational process: institutional perspectives."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Educational process: institutional perspectives"@en ;
@@ -122,6 +131,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :330
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 330 in the Australian Thesaurus of Education Descriptors, covering educational process: societal perspectives."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Educational process: societal perspectives"@en ;
@@ -130,6 +140,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :340
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 340 in the Australian Thesaurus of Education Descriptors, covering educational levels, qualifications and organisations."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Educational levels, qualifications and organisations"@en ;
@@ -138,6 +149,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :350
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 350 in the Australian Thesaurus of Education Descriptors, covering curriculum organisation."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Curriculum organisation"@en ;
@@ -146,6 +158,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :360
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 360 in the Australian Thesaurus of Education Descriptors, covering students, teachers, educational personnel."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Students, teachers, educational personnel"@en ;
@@ -154,6 +167,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :400
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 400 in the Australian Thesaurus of Education Descriptors, covering curriculum subjects."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Curriculum subjects"@en ;
@@ -162,6 +176,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :410
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 410 in the Australian Thesaurus of Education Descriptors, covering agriculture and natural resources."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Agriculture and natural resources"@en ;
@@ -170,6 +185,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :420
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 420 in the Australian Thesaurus of Education Descriptors, covering arts."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Arts"@en ;
@@ -178,6 +194,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :430
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 430 in the Australian Thesaurus of Education Descriptors, covering humanities."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Humanities"@en ;
@@ -186,6 +203,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :440
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 440 in the Australian Thesaurus of Education Descriptors, covering languages."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Languages"@en ;
@@ -194,6 +212,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :450
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 450 in the Australian Thesaurus of Education Descriptors, covering language and speech."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Language and speech"@en ;
@@ -202,6 +221,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :460
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 460 in the Australian Thesaurus of Education Descriptors, covering reading."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Reading"@en ;
@@ -210,6 +230,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :470
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 470 in the Australian Thesaurus of Education Descriptors, covering physical education and recreation."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Physical education and recreation"@en ;
@@ -218,6 +239,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :480
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 480 in the Australian Thesaurus of Education Descriptors, covering mathematics."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Mathematics"@en ;
@@ -226,6 +248,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :490
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 490 in the Australian Thesaurus of Education Descriptors, covering science and technology."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Science and technology"@en ;
@@ -234,6 +257,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :510
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 510 in the Australian Thesaurus of Education Descriptors, covering the individual in social context."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "The Individual in social context"@en ;
@@ -242,6 +266,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :520
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 520 in the Australian Thesaurus of Education Descriptors, covering social processes and structures."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Social processes and structures"@en ;
@@ -250,6 +275,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :530
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 530 in the Australian Thesaurus of Education Descriptors, covering social problems."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Social problems"@en ;
@@ -258,6 +284,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :540
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 540 in the Australian Thesaurus of Education Descriptors, covering bias and equity."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Bias and equity"@en ;
@@ -266,6 +293,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :550
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 550 in the Australian Thesaurus of Education Descriptors, covering human geography."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Human geography"@en ;
@@ -274,6 +302,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :560
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 560 in the Australian Thesaurus of Education Descriptors, covering peoples and cultures."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Peoples and cultures"@en ;
@@ -282,6 +311,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :610
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 610 in the Australian Thesaurus of Education Descriptors, covering government and politics."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Government and politics"@en ;
@@ -290,6 +320,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :620
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 620 in the Australian Thesaurus of Education Descriptors, covering economics and finance."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Economics and finance"@en ;
@@ -298,6 +329,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :630
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 630 in the Australian Thesaurus of Education Descriptors, covering labour and employment."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Labour and employment"@en ;
@@ -306,6 +338,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :640
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 640 in the Australian Thesaurus of Education Descriptors, covering occupations."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Occupations"@en ;
@@ -314,6 +347,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :650
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 650 in the Australian Thesaurus of Education Descriptors, covering business, commerce and industry."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Business, commerce and industry"@en ;
@@ -322,6 +356,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :710
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 710 in the Australian Thesaurus of Education Descriptors, covering information / communications systems."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Information / communications systems"@en ;
@@ -330,6 +365,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :720
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 720 in the Australian Thesaurus of Education Descriptors, covering communications media."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Communications media"@en ;
@@ -338,6 +374,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :730
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 730 in the Australian Thesaurus of Education Descriptors, covering publication / document types."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Publication / document types"@en ;
@@ -346,6 +383,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :810
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 810 in the Australian Thesaurus of Education Descriptors, covering research and theory."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Research and theory"@en ;
@@ -354,6 +392,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :820
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 820 in the Australian Thesaurus of Education Descriptors, covering measurement."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Measurement"@en ;
@@ -362,6 +401,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :830
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 830 in the Australian Thesaurus of Education Descriptors, covering tests and scales."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Tests and scales"@en ;
@@ -370,6 +410,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :910
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 910 in the Australian Thesaurus of Education Descriptors, covering equipment."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Equipment"@en ;
@@ -378,6 +419,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 :920
     a skos:Concept ;
+    rdfs:isDefinedBy cs: ;
     skos:definition "Subject category 920 in the Australian Thesaurus of Education Descriptors, covering facilities."@en ;
     skos:inScheme cs: ;
     skos:prefLabel "Facilities"@en ;
