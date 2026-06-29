@@ -41,6 +41,39 @@ def parse_subject_category_labels(path: Path) -> dict[str, str]:
     return labels
 
 
+def turtle_literal_to_text(value: str) -> str:
+    """Unescape the small Turtle literal subset used in this repository."""
+    return (
+        value.replace('\\"', '"')
+        .replace("\\n", "\n")
+        .replace("\\r", "\r")
+        .replace("\\\\", "\\")
+    )
+
+
+def parse_scheme_definition(path: Path) -> str | None:
+    """Return the cs: skos:definition value from an ATED Turtle file."""
+    text = path.read_text(encoding="utf-8")
+    scheme_match = re.search(r"^cs:\n(?P<body>.*?)(?:\n\.)", text, flags=re.DOTALL | re.MULTILINE)
+    if not scheme_match:
+        return None
+
+    body = scheme_match.group("body")
+    definition_match = re.search(
+        r'skos:definition\s+"""(?P<triple>.*?)"""@en',
+        body,
+        flags=re.DOTALL,
+    )
+    if definition_match:
+        return definition_match.group("triple")
+
+    definition_match = re.search(r'skos:definition\s+"(?P<single>(?:\\"|[^"])*)"@en', body)
+    if definition_match:
+        return turtle_literal_to_text(definition_match.group("single"))
+
+    return None
+
+
 def parse_concept_metadata(path: Path) -> dict[str, ConceptMetadata]:
     """Return local concept names mapped to ATED-specific HTML metadata."""
     concepts: dict[str, ConceptMetadata] = {}
@@ -59,6 +92,34 @@ def parse_concept_metadata(path: Path) -> dict[str, ConceptMetadata]:
         if metadata.subjects or metadata.modified:
             concepts[local_name] = metadata
     return concepts
+
+
+def html_paragraphs(value: str) -> str:
+    paragraphs = [paragraph.strip() for paragraph in re.split(r"\n\s*\n", value) if paragraph.strip()]
+    return "\n".join(f"                <p>{html.escape(paragraph)}</p>" for paragraph in paragraphs)
+
+
+def enrich_scheme_definition(html_text: str, definition: str | None) -> str:
+    """Replace the rendered ConceptScheme definition with the TTL value."""
+    if not definition:
+        return html_text
+
+    definition_pattern = re.compile(
+        r'(?P<block><div>\n'
+        r'\s*<dt>\n'
+        r'\s*<a href="http://www\.w3\.org/2004/02/skos/core#definition">Definition</a>\n'
+        r'\s*</dt>\n'
+        r'\s*<dd>\n'
+        r'\s*<div>\n)'
+        r'.*?'
+        r'(?P<tail>\n\s*</div>\n\s*</dd>\n\s*</div>)',
+        flags=re.DOTALL,
+    )
+    return definition_pattern.sub(
+        lambda match: match.group("block") + html_paragraphs(definition) + match.group("tail"),
+        html_text,
+        count=1,
+    )
 
 
 def subject_row(category_ids: list[str], category_labels: dict[str, str]) -> str:
@@ -96,8 +157,10 @@ def enrich_html(
     html_text: str,
     concepts: dict[str, ConceptMetadata],
     category_labels: dict[str, str],
+    scheme_definition: str | None = None,
 ) -> str:
     """Insert Subject and Modified rows into each matching concept table."""
+    html_text = enrich_scheme_definition(html_text, scheme_definition)
 
     def replace_entity(match: re.Match[str]) -> str:
         local_name = match.group("id")
@@ -165,7 +228,13 @@ def main() -> None:
 
     category_labels = parse_subject_category_labels(args.ated_sc_ttl)
     concepts = parse_concept_metadata(args.ated_ttl)
-    enriched = enrich_html(args.html.read_text(encoding="utf-8"), concepts, category_labels)
+    scheme_definition = parse_scheme_definition(args.ated_ttl)
+    enriched = enrich_html(
+        args.html.read_text(encoding="utf-8"),
+        concepts,
+        category_labels,
+        scheme_definition,
+    )
     args.html.write_text(enriched, encoding="utf-8")
 
 
