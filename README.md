@@ -7,6 +7,6 @@ See these vocabs on static web pages:
 * [ATED](https://raw.githack.com/Kurrawong/ated/main/vocabs/ated.html)
 * [ATED Subject Categories](https://raw.githack.com/Kurrawong/ated/main/vocabs/ated-sc.html)
 
-* The are also both displayed in KurrawongAI's demo [Prez](https://prez.dev/) system online at:
+The are also both displayed in KurrawongAI's demo [Prez](https://prez.dev/) system online at:
 
 * <https://demo.dev.kurrawong.ai/catalogs/exm:demo-vocabs/collections>
