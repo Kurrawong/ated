@@ -39,6 +39,12 @@ MONTHS = {
     "december": 12,
 }
 
+SCHEME_DEFINITION = """The Australian Thesaurus of Education Descriptors (ATED) has been the definitive reference on Australian terminology in the area of education since 1979. It reflects terminology used to describe research and practice in Australian education.
+
+Developed and maintained by ACER Cunningham Library and updated every six months, ATED is the indispensible tool for indexing and searching Australian education literature.
+
+ATED is used to index the Australian Education Index, Education Research Theses, Database of Research on International Education, Blended, Online Learning and Distance Education research bank, Indigenous Education Research Database and the ACER library catalogue and can also be used to consult these databases."""
+
 
 def local_name(label: str) -> str:
     """Convert a descriptor to a lower-camel-case IRI suffix."""
@@ -174,7 +180,7 @@ def convert(source: Path, destination: Path) -> None:
                 ("skos:prefLabel", [turtle_string("Australian Thesaurus of Education Descriptors", "en")]),
                 (
                     "skos:definition",
-                    [turtle_string("Australian Thesaurus of Education Descriptors", "en")],
+                    [turtle_string(SCHEME_DEFINITION, "en")],
                 ),
                 ("skos:hasTopConcept", top_concepts),
                 ("schema:publisher", ["<https://ror.org/012x2n652>"]),
@@ -214,6 +220,16 @@ def convert(source: Path, destination: Path) -> None:
                 ],
             ),
         ]
+
+        add_statement(
+            statements,
+            "skos:notation",
+            [
+                turtle_string(element.text.strip())
+                for element in record.findall("TNR")
+                if element.text
+            ],
+        )
 
         alt_labels = [element.text for element in record.findall("UF")]
         alt_labels.extend(non_descriptors.get(descriptor, []))
