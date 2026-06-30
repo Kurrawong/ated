@@ -225,7 +225,7 @@ def convert(source: Path, destination: Path) -> None:
             statements,
             "skos:notation",
             [
-                turtle_string(element.text.strip())
+                f"{turtle_string(element.text.strip())}^^xsd:token"
                 for element in record.findall("TNR")
                 if element.text
             ],
