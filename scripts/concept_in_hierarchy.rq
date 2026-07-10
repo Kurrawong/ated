@@ -1,0 +1,41 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT
+  ?concept
+  ?direction
+  (COUNT(DISTINCT ?mid) AS ?distance)
+WHERE {
+  VALUES ?givenConcept {
+    <https://linked.data.gov.au/def/ated/physics>
+  }
+
+  {
+    # Follow broader assertions or inverse narrower assertions.
+    ?givenConcept
+      (skos:broader | ^skos:narrower)*
+      ?mid .
+
+    ?mid
+      (skos:broader | ^skos:narrower)+
+      ?concept .
+
+    BIND("broader" AS ?direction)
+  }
+  UNION
+  {
+    # Follow narrower assertions or inverse broader assertions.
+    ?givenConcept
+      (skos:narrower | ^skos:broader)*
+      ?mid .
+
+    ?mid
+      (skos:narrower | ^skos:broader)+
+      ?concept .
+
+    BIND("narrower" AS ?direction)
+  }
+
+  FILTER(?concept != ?givenConcept)
+}
+GROUP BY ?concept ?direction
+ORDER BY ?direction ?distance ?concept
