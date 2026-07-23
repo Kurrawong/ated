@@ -78,7 +78,7 @@ def parse_concept_metadata(path: Path) -> dict[str, ConceptMetadata]:
     """Return local concept names mapped to ATED-specific HTML metadata."""
     concepts: dict[str, ConceptMetadata] = {}
     for block in path.read_text(encoding="utf-8").split("\n\n"):
-        subject_match = re.match(r":([A-Za-z][A-Za-z0-9]*)\n", block)
+        subject_match = re.match(r":([A-Za-z0-9]+)\n", block)
         if not subject_match or "a skos:Concept" not in block:
             continue
 

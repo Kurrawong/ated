@@ -5,7 +5,6 @@ from __future__ import annotations
 
 import argparse
 import re
-import unicodedata
 import xml.etree.ElementTree as ET
 from collections import defaultdict
 from pathlib import Path
@@ -46,22 +45,6 @@ Developed and maintained by ACER Cunningham Library and updated every six months
 ATED is used to index the Australian Education Index, Education Research Theses, Database of Research on International Education, Blended, Online Learning and Distance Education research bank, Indigenous Education Research Database and the ACER library catalogue and can also be used to consult these databases."""
 
 
-def local_name(label: str) -> str:
-    """Convert a descriptor to a lower-camel-case IRI suffix."""
-    normalized = unicodedata.normalize("NFKD", label)
-    normalized = "".join(
-        character
-        for character in normalized
-        if not unicodedata.combining(character)
-    )
-    words = re.findall(r"[A-Za-z0-9]+", normalized)
-    if not words:
-        raise ValueError(f"Cannot generate an IRI suffix from {label!r}")
-    return words[0].lower() + "".join(
-        word[:1].upper() + word[1:].lower() for word in words[1:]
-    )
-
-
 def turtle_string(value: str, language: str | None = None) -> str:
     escaped = (
         value.replace("\\", "\\\\")
@@ -94,8 +77,18 @@ def modified_date(value: str) -> str:
     normalized = f"{year:04d}-{month:02d}"
     return f"{turtle_string(normalized)}^^xsd:gYearMonth"
 
-def iri_for(label: str) -> str:
-    return f":{local_name(label)}"
+def concept_iri(tnr: str) -> str:
+    """Return the compact IRI for a descriptor concept TNR."""
+    if not tnr:
+        raise ValueError("Concept TNR cannot be empty")
+    return f":{tnr}"
+
+
+def iri_for(label: str, tnrs: dict[str, str]) -> str:
+    try:
+        return concept_iri(tnrs[label])
+    except KeyError as error:
+        raise ValueError(f"Unknown descriptor reference: {label!r}") from error
 
 
 def subject_iri(classification: str) -> str:
@@ -129,17 +122,26 @@ def convert(source: Path, destination: Path) -> None:
         if record.find("DESCRIPTOR") is not None
     }
 
-    suffixes: dict[str, list[str]] = defaultdict(list)
-    for descriptor in descriptors:
-        suffixes[local_name(descriptor)].append(descriptor)
-    collisions = {
-        suffix: labels for suffix, labels in suffixes.items() if len(labels) > 1
+    tnrs = {
+        descriptor: record.findtext("TNR").strip()
+        for descriptor, record in descriptors.items()
+        if record.findtext("TNR")
     }
-    if collisions:
+    missing_tnrs = sorted(set(descriptors) - set(tnrs))
+    if missing_tnrs:
+        raise ValueError(f"Descriptors missing TNRs: {missing_tnrs}")
+
+    tnr_labels: dict[str, list[str]] = defaultdict(list)
+    for descriptor, tnr in tnrs.items():
+        tnr_labels[tnr].append(descriptor)
+    duplicate_tnrs = {
+        tnr: labels for tnr, labels in tnr_labels.items() if len(labels) > 1
+    }
+    if duplicate_tnrs:
         details = "; ".join(
-            f"{suffix}: {labels}" for suffix, labels in sorted(collisions.items())
+            f"{tnr}: {labels}" for tnr, labels in sorted(duplicate_tnrs.items())
         )
-        raise ValueError(f"Generated IRI collisions: {details}")
+        raise ValueError(f"Duplicate concept TNRs: {details}")
 
     non_descriptors: dict[str, list[str]] = defaultdict(list)
     for record in records:
@@ -154,7 +156,7 @@ def convert(source: Path, destination: Path) -> None:
                 non_descriptors[preferred.text].append(label)
 
     top_concepts = [
-        iri_for(descriptor)
+        concept_iri(tnrs[descriptor])
         for descriptor, record in descriptors.items()
         if not record.findall("BT")
     ]
@@ -246,17 +248,17 @@ def convert(source: Path, destination: Path) -> None:
         add_statement(
             statements,
             "skos:broader",
-            [iri_for(element.text) for element in record.findall("BT")],
+            [iri_for(element.text, tnrs) for element in record.findall("BT")],
         )
         add_statement(
             statements,
             "skos:narrower",
-            [iri_for(element.text) for element in record.findall("NT")],
+            [iri_for(element.text, tnrs) for element in record.findall("NT")],
         )
         add_statement(
             statements,
             "skos:related",
-            [iri_for(element.text) for element in record.findall("RT")],
+            [iri_for(element.text, tnrs) for element in record.findall("RT")],
         )
         add_statement(
             statements,
@@ -271,7 +273,7 @@ def convert(source: Path, destination: Path) -> None:
         if not record.findall("BT"):
             statements.insert(3, ("skos:topConceptOf", ["cs:"]))
 
-        blocks.append(render_subject(iri_for(descriptor), statements))
+        blocks.append(render_subject(concept_iri(tnrs[descriptor]), statements))
 
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text("\n\n".join(blocks) + "\n", encoding="utf-8")
