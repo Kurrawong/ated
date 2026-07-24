@@ -1,0 +1,118 @@
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX id: <http://id.loc.gov/vocabulary/identifiers/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+dcat:Catalog
+    schema:name "Catalog"@en ;
+.
+
+dcterms:hasPart
+    schema:name "has part"@en ;
+.
+
+dcterms:modified
+    schema:name "modified"@en ;
+.
+
+dcterms:subject
+    schema:name "subject"@en ;
+.
+
+id:local
+    schema:name "local identifier"@en ;
+.
+
+rdfs:isDefinedBy
+    schema:name "is defined by"@en ;
+.
+
+skos:Concept
+    schema:name "Concept"@en ;
+.
+
+skos:ConceptScheme
+    schema:name "Concept Scheme"@en ;
+.
+
+skos:altLabel
+    schema:name "alternative label"@en ;
+.
+
+skos:broader
+    schema:name "broader"@en ;
+.
+
+skos:definition
+    schema:name "definition"@en ;
+.
+
+skos:hasTopConcept
+    schema:name "has top concept"@en ;
+.
+
+skos:inScheme
+    schema:name "is in scheme"@en ;
+.
+
+skos:notation
+    schema:name "notation"@en ;
+.
+
+skos:prefLabel
+    schema:name "preferred label"@en ;
+.
+
+skos:scopeNote
+    schema:name "scope note"@en ;
+.
+
+skos:topConceptOf
+    schema:name "top concept of"@en ;
+.
+
+schema:codeRepository
+    schema:name "code repository"@en ;
+.
+
+schema:creator
+    schema:name "creator"@en ;
+.
+
+schema:dateCreated
+    schema:name "date created"@en ;
+.
+
+schema:dateModified
+    schema:name "date modified"@en ;
+.
+
+schema:description
+    schema:name "description"@en ;
+.
+
+schema:name
+    schema:name "name"@en ;
+.
+
+schema:publisher
+    schema:name "publisher"@en ;
+.
+
+<http://purl.org/linked-data/registry#status>
+    schema:name "status"@en ;
+.
+
+<https://kurrawong.ai>
+    schema:name "KurrawongAI"@en ;
+.
+
+<https://linked.data.gov.au/def/reg-statuses/experimental>
+    schema:name "experimental"@en ;
+.
+
+<https://ror.org/012x2n652>
+    schema:name "Australian Council for Educational Research"@en ;
+.

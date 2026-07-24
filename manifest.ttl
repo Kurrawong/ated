@@ -1,0 +1,41 @@
+PREFIX mrr: <https://prez.dev/ManifestResourceRoles/>
+PREFIX prez: <https://prez.dev/>
+PREFIX prof: <http://www.w3.org/ns/dx/prof/>
+PREFIX schema: <https://schema.org/>
+
+[]
+    a prez:Manifest ;
+    prof:hasResource
+        [
+            prof:hasArtifact "catalogue.ttl" ;
+            prof:hasRole mrr:CatalogueData ;
+            schema:description "The demo-vocabs catalogue definition, including the ATED concept schemes" ;
+            schema:name "Catalogue Definition"
+        ] ,
+        [
+            prof:hasArtifact
+                [
+                    schema:contentLocation "vocabs/ated.ttl" ;
+                    schema:mainEntity <https://linked.data.gov.au/def/ated>
+                ] ,
+                [
+                    schema:contentLocation "vocabs/ated-sc.ttl" ;
+                    schema:mainEntity <https://linked.data.gov.au/def/ated/SC>
+                ] ;
+            prof:hasRole mrr:ResourceData ;
+            schema:description "The ATED and ATED Subject Categories SKOS concept schemes" ;
+            schema:name "ATED Resource Data"
+        ] ,
+        [
+            prof:hasArtifact "https://raw.githubusercontent.com/RDFLib/prez/refs/heads/main/prez/reference_data/profiles/ogc_records_profile.ttl" ;
+            prof:hasRole mrr:CatalogueAndResourceModel ;
+            schema:description "The default Prez profile for the Records API" ;
+            schema:name "Prez Records Profile"
+        ] ,
+        [
+            prof:hasArtifact "_background/labels.ttl" ;
+            prof:hasRole mrr:CompleteCatalogueAndResourceLabels ;
+            schema:description "Labels required to render the catalogue and ATED resources" ;
+            schema:name "Labels"
+        ] ;
+.
