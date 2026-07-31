@@ -12,6 +12,10 @@ from pathlib import Path
 
 BASE_IRI = "https://linked.data.gov.au/def/ated/"
 SCHEME_IRI = "https://linked.data.gov.au/def/ated"
+MULTITES_TERM_URL = (
+    "https://cunningham.acer.edu.au/multites2007/mtwdk.exe"
+    "?k=default&l=60&w={tnr}&n=1&s=5&t=2"
+)
 MONTHS = {
     "jan": 1,
     "january": 1,
@@ -84,6 +88,13 @@ def concept_iri(tnr: str) -> str:
     return f":{tnr}"
 
 
+def multites_term_iri(tnr: str) -> str:
+    """Return the legacy MultiTes resource IRI for a descriptor TNR."""
+    if not tnr:
+        raise ValueError("MultiTes Term Number cannot be empty")
+    return f"<{MULTITES_TERM_URL.format(tnr=tnr)}>"
+
+
 def iri_for(label: str, tnrs: dict[str, str]) -> str:
     try:
         return concept_iri(tnrs[label])
@@ -113,7 +124,9 @@ def render_subject(subject: str, statements: list[tuple[str, list[str]]]) -> str
     return "\n".join(lines)
 
 
-def convert(source: Path, destination: Path) -> None:
+def convert(
+    source: Path, destination: Path, include_multites_provenance: bool = False
+) -> None:
     root = ET.parse(source).getroot()
     records = root.findall("CONCEPT")
     descriptors = {
@@ -161,25 +174,34 @@ def convert(source: Path, destination: Path) -> None:
         if not record.findall("BT")
     ]
 
+    prefixes = [
+        "@prefix dcterms: <http://purl.org/dc/terms/> .",
+        "@prefix : <https://linked.data.gov.au/def/ated/> .",
+        "@prefix atedsc: <https://linked.data.gov.au/def/ated/SC/> .",
+        "@prefix cs: <https://linked.data.gov.au/def/ated> .",
+        "@prefix id: <http://id.loc.gov/vocabulary/identifiers/> .",
+        "@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .",
+        "@prefix schema: <https://schema.org/> .",
+        "@prefix skos: <http://www.w3.org/2004/02/skos/core#> .",
+        "@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .",
+    ]
+    if include_multites_provenance:
+        prefixes.insert(5, "@prefix prov: <http://www.w3.org/ns/prov#> .")
+
     blocks = [
-        "\n".join(
-            [
-                "@prefix dcterms: <http://purl.org/dc/terms/> .",
-                "@prefix : <https://linked.data.gov.au/def/ated/> .",
-                "@prefix atedsc: <https://linked.data.gov.au/def/ated/SC/> .",
-                "@prefix cs: <https://linked.data.gov.au/def/ated> .",
-                "@prefix id: <http://id.loc.gov/vocabulary/identifiers/> .",
-                "@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .",
-                "@prefix schema: <https://schema.org/> .",
-                "@prefix skos: <http://www.w3.org/2004/02/skos/core#> .",
-                "@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .",
-            ]
-        ),
+        "\n".join(prefixes),
         render_subject(
             "cs:",
             [
                 ("a", ["skos:ConceptScheme"]),
-                ("skos:prefLabel", [turtle_string("Australian Thesaurus of Education Descriptors", "en")]),
+                (
+                    "skos:prefLabel",
+                    [
+                        turtle_string(
+                            "Australian Thesaurus of Education Descriptors", "en"
+                        )
+                    ],
+                ),
                 (
                     "skos:definition",
                     [turtle_string(SCHEME_DEFINITION, "en")],
@@ -188,7 +210,7 @@ def convert(source: Path, destination: Path) -> None:
                 ("schema:publisher", ["<https://ror.org/012x2n652>"]),
                 ("schema:creator", ["<https://ror.org/012x2n652>"]),
                 ("schema:dateCreated", ['"2026-06-24"^^xsd:date']),
-                ("schema:dateModified", ['"2026-06-24"^^xsd:date']),
+                ("schema:dateModified", ['"2026-07-23"^^xsd:date']),
                 ("schema:identifier", ['"9780864316813"^^id:isbn']),
             ],
         ),
@@ -222,6 +244,11 @@ def convert(source: Path, destination: Path) -> None:
                 ],
             ),
         ]
+        if include_multites_provenance:
+            statements.insert(
+                1,
+                ("prov:wasDerivedFrom", [multites_term_iri(tnrs[descriptor])]),
+            )
 
         add_statement(
             statements,
@@ -283,8 +310,13 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("source", type=Path)
     parser.add_argument("destination", type=Path)
+    parser.add_argument(
+        "--multites-provenance",
+        action="store_true",
+        help="add a prov:wasDerivedFrom link to each legacy MultiTes term resource",
+    )
     args = parser.parse_args()
-    convert(args.source, args.destination)
+    convert(args.source, args.destination, args.multites_provenance)
 
 
 if __name__ == "__main__":

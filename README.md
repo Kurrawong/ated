@@ -6,6 +6,25 @@ The are both displayed in KurrawongAI's demo [Prez](https://prez.dev/) system on
 
 * <https://demo.dev.kurrawong.ai/catalogs/exm:demo-vocabs/collections>
 
+## Generate ATED RDF
+
+Generate the vocabulary from the MultiTes XML export:
+
+```sh
+python3 scripts/xml_to_skos.py \
+  "raw/xml/ATED June2026 with TNRs.xml" \
+  vocabs/ated.ttl
+```
+
+Add provenance links to the corresponding legacy MultiTes term resources by
+opting in with `--multites-provenance`:
+
+```sh
+python3 scripts/xml_to_skos.py --multites-provenance \
+  "raw/xml/ATED June2026 with TNRs.xml" \
+  vocabs/ated.ttl
+```
+
 ## Prez manifest
 
 `manifest.ttl` describes how to load both vocabularies into the
