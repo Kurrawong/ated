@@ -210,7 +210,7 @@ def convert(
                 ("schema:publisher", ["<https://ror.org/012x2n652>"]),
                 ("schema:creator", ["<https://ror.org/012x2n652>"]),
                 ("schema:dateCreated", ['"2026-06-24"^^xsd:date']),
-                ("schema:dateModified", ['"2026-07-23"^^xsd:date']),
+                ("schema:dateModified", ['"2026-07-31"^^xsd:date']),
                 ("schema:identifier", ['"9780864316813"^^id:isbn']),
             ],
         ),
