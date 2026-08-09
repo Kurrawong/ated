@@ -1,0 +1,20 @@
+version: 1
+name: ATED Subject Categories
+
+source:
+  format: multites-xml
+  category_element: SC
+  category_pattern: '^(?P<identifier>\d{3})\s+(?P<label>.+)$'
+
+output:
+  scheme_iri: https://linked.data.gov.au/def/ated/SC
+  concept_iri_template: https://linked.data.gov.au/def/ated/SC/{identifier}
+  metadata: metadata/ated-subject-categories-scheme.ttl
+  language: en
+
+concept:
+  definition_template: "Subject category {identifier} in the Australian Thesaurus of Education Descriptors, covering {lower_label}."
+  all_top_concepts: true
+
+validation:
+  shacl: shapes/ated-subject-categories.shacl.ttl

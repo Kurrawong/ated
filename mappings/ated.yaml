@@ -1,0 +1,81 @@
+version: 1
+name: Australian Thesaurus of Education Descriptors
+
+source:
+  format: multites-xml
+  record_xpath: CONCEPT
+  descriptor_element: DESCRIPTOR
+  non_descriptor_element: NON-DESCRIPTOR
+  use_element: USE
+
+output:
+  scheme_iri: https://linked.data.gov.au/def/ated
+  concept_iri_template: https://linked.data.gov.au/def/ated/{TNR}
+  metadata: metadata/ated-scheme.ttl
+  language: en
+
+concept:
+  identifier_element: TNR
+  definition_template: "{DESCRIPTOR} is a concept in the Australian Thesaurus of Education Descriptors"
+  top_concept_rule: no_broader_terms
+  source_iri_template: "https://cunningham.acer.edu.au/multites2007/mtwdk.exe?k=default&l=60&w={TNR}&n=1&s=5&t=2"
+  source_whitespace: strip_trailing_each_line
+
+# Each field says what source element means. Named transforms are implemented
+# in src/ated_transform/normalise.py and src/ated_transform/build.py.
+fields:
+  DESCRIPTOR:
+    property: skos:prefLabel
+    value: language_literal
+    required: true
+    cardinality: one
+  TNR:
+    property: skos:notation
+    value: typed_literal
+    datatype: xsd:token
+    required: true
+    unique: true
+  UF:
+    property: skos:altLabel
+    value: language_literal
+  SN:
+    property: skos:scopeNote
+    value: language_literal
+  BT:
+    property: skos:broader
+    value: descriptor_reference
+  NT:
+    property: skos:narrower
+    value: descriptor_reference
+  RT:
+    property: skos:related
+    value: descriptor_reference
+  SC:
+    property: dcterms:subject
+    value: subject_category_iri
+  AD:
+    property: dcterms:modified
+    value: amendment_date
+
+derived_rules:
+  - name: source_whitespace
+    description: >-
+      Strip trailing whitespace from each line of XML text while preserving
+      meaningful line breaks and any leading space present in the source.
+  - name: non_descriptor_use
+    description: >-
+      A NON-DESCRIPTOR does not become a SKOS concept. Its label becomes a
+      skos:altLabel of every descriptor named by USE. Its own TNR is ignored.
+  - name: top_concept
+    description: >-
+      A descriptor with no BT element receives skos:topConceptOf, and the
+      scheme receives the inverse skos:hasTopConcept statement.
+  - name: source_link
+    description: >-
+      Every descriptor concept receives a dcterms:source IRI formed from its
+      MultiTes TNR.
+
+validation:
+  shacl: shapes/ated.shacl.ttl
+  known_warnings:
+    missing_subject_category: 6

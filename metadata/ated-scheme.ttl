@@ -1,0 +1,26 @@
+PREFIX cs: <https://linked.data.gov.au/def/ated>
+PREFIX id: <http://id.loc.gov/vocabulary/identifiers/>
+PREFIX schema: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<https://ror.org/012x2n652>
+    a schema:Organization ;
+    schema:name "Australian Council for Educational Research" ;
+    schema:url "https://www.acer.org/"^^xsd:anyURI ;
+.
+
+cs:
+    a skos:ConceptScheme ;
+    skos:prefLabel "Australian Thesaurus of Education Descriptors"@en ;
+    skos:definition """The Australian Thesaurus of Education Descriptors (ATED) has been the definitive reference on Australian terminology in the area of education since 1979. It reflects terminology used to describe research and practice in Australian education.
+
+Developed and maintained by ACER Cunningham Library and updated every six months, ATED is the indispensible tool for indexing and searching Australian education literature.
+
+ATED is used to index the Australian Education Index, Education Research Theses, Database of Research on International Education, Blended, Online Learning and Distance Education research bank, Indigenous Education Research Database and the ACER library catalogue and can also be used to consult these databases."""@en ;
+    schema:publisher <https://ror.org/012x2n652> ;
+    schema:creator <https://ror.org/012x2n652> ;
+    schema:dateCreated "2026-06-24"^^xsd:date ;
+    schema:dateModified "2026-08-01"^^xsd:date ;
+    schema:identifier "9780864316813"^^id:isbn ;
+.

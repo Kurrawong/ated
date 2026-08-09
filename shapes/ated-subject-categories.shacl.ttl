@@ -1,0 +1,35 @@
+PREFIX atedsc: <https://linked.data.gov.au/def/ated/SC/>
+PREFIX cs: <https://linked.data.gov.au/def/ated/SC>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+atedsc:ConceptShape
+    a sh:NodeShape ;
+    sh:targetClass skos:Concept ;
+    sh:pattern "^https://linked\\.data\\.gov\\.au/def/ated/SC/[0-9]{3}$" ;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue cs: ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path rdfs:isDefinedBy ;
+        sh:hasValue cs: ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:languageIn ( "en" ) ;
+    ] ;
+    sh:property [
+        sh:path skos:topConceptOf ;
+        sh:hasValue cs: ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+.

@@ -1,0 +1,59 @@
+PREFIX ated: <https://linked.data.gov.au/def/ated/>
+PREFIX cs: <https://linked.data.gov.au/def/ated>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+ated:ConceptShape
+    a sh:NodeShape ;
+    sh:targetClass skos:Concept ;
+    sh:property [
+        sh:path skos:inScheme ;
+        sh:hasValue cs: ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Every ATED concept must belong to the ATED scheme." ;
+    ] ;
+    sh:property [
+        sh:path rdfs:isDefinedBy ;
+        sh:hasValue cs: ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:languageIn ( "en" ) ;
+        sh:uniqueLang true ;
+    ] ;
+    sh:property [
+        sh:path skos:notation ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:token ;
+        sh:pattern "^[0-9]+$" ;
+    ] ;
+    sh:property [
+        sh:path dcterms:source ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:path dcterms:subject ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:severity sh:Warning ;
+        sh:message "ATED concept has no subject category; review with ACER." ;
+    ] ;
+.
+
+ated:ConceptIriShape
+    a sh:NodeShape ;
+    sh:targetClass skos:Concept ;
+    sh:pattern "^https://linked\\.data\\.gov\\.au/def/ated/[0-9]+$" ;
+    sh:message "ATED concept IRI must end with its numeric MultiTes TNR." ;
+.

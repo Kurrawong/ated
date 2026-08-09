@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<THESAURUS>
+  <CONCEPT>
+    <DESCRIPTOR>Education</DESCRIPTOR>
+    <TNR>100</TNR>
+    <SC>310 Educational process: classroom perspectives</SC>
+    <NT>Teaching</NT>
+    <AD>Jan 84</AD>
+  </CONCEPT>
+  <CONCEPT>
+    <DESCRIPTOR>Teaching</DESCRIPTOR>
+    <TNR>101</TNR>
+    <SC>310 Educational process: classroom perspectives</SC>
+    <UF>Instruction</UF>
+    <BT>Education</BT>
+    <RT>Learning</RT>
+    <AD>2015</AD>
+  </CONCEPT>
+  <CONCEPT>
+    <NON-DESCRIPTOR>Pedagogy</NON-DESCRIPTOR>
+    <TNR>999</TNR>
+    <USE>Teaching</USE>
+  </CONCEPT>
+  <CONCEPT>
+    <DESCRIPTOR>Learning</DESCRIPTOR>
+    <TNR>102</TNR>
+    <SC>110 Learning and perception</SC>
+    <RT>Teaching</RT>
+  </CONCEPT>
+</THESAURUS>
