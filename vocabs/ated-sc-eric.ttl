@@ -1,0 +1,242 @@
+PREFIX : <https://linked.data.gov.au/def/ated/SC/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX schema: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+:ated-eric-mapping a schema:CreativeWork ;
+    skos:prefLabel "ATED Subject Categories ERIC mapping"@en ;
+    schema:creator <https://kurrawong.ai> ;
+    schema:dateCreated "2026-09-14"^^xsd:date ;
+    schema:dateModified "2026-09-14"^^xsd:date ;
+    schema:publisher <https://kurrawong.ai> ;
+.
+
+:110
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=110> ;
+    skos:prefLabel "Learning and perception"@en ;
+.
+
+:120
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=120> ;
+    skos:prefLabel "Individual development and characteristics"@en ;
+.
+
+:210
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=210> ;
+    skos:prefLabel "Health and safety"@en ;
+.
+
+:220
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=220> ;
+    skos:prefLabel "Disabilities"@en ;
+.
+
+:230
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=230> ;
+    skos:prefLabel "Mental health"@en ;
+.
+
+:240
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=240> ;
+    skos:prefLabel "Counselling"@en ;
+.
+
+:310
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=310> ;
+    skos:prefLabel "Educational process: classroom perspectives"@en ;
+.
+
+:320
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=320> ;
+    skos:prefLabel "Educational process: institutional perspectives"@en ;
+.
+
+:330
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=330> ;
+    a skos:Concept ;
+    skos:prefLabel "Educational process: societal perspectives"@en ;
+. 
+
+:340
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=340> ;
+    skos:prefLabel "Educational levels, qualifications and organisations"@en ;
+    skos:note "in Eric: Educational Levels, Degrees, and Organizations"@en ;
+.
+
+:350
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=350> ;
+    skos:prefLabel "Curriculum organisation"@en ;
+.
+
+:360
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=360> ;
+    skos:prefLabel "Students, teachers, educational personnel"@en ;
+.
+
+:400
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=400> ;
+    skos:prefLabel "Curriculum subjects"@en ;
+    skos:note "in Eric: Subjects of Instruction"@en ;
+.
+
+:410
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=410> ;
+    skos:prefLabel "Agriculture and natural resources"@en ;
+.
+
+:420
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=420> ;
+    skos:prefLabel "Arts"@en ;
+.
+
+:430
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=430> ;
+    skos:prefLabel "Humanities"@en ;
+ 
+
+:440
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=440> ;
+    skos:prefLabel "Languages"@en ;
+.
+
+:450
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=450> ;
+    skos:prefLabel "Language and speech"@en ;
+.
+
+:460
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=460> ;
+    skos:prefLabel "Reading"@en ;
+.
+
+:470
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=470> ;
+    skos:prefLabel "Physical education and recreation"@en ;
+.
+
+:480
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=480> ;
+    skos:prefLabel "Mathematics"@en ;
+.
+ 
+:490
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=490> ;
+    skos:prefLabel "Science and technology"@en ;
+.
+
+:510
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=510> ;
+    skos:prefLabel "The Individual in social context"@en ;
+    skos:note "in Eric: The Individual in Social Context"@en ;
+.
+
+:520
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=520> ;
+    skos:prefLabel "Social processes and structures"@en ;
+.
+
+:530
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=530> ;
+    skos:prefLabel "Social problems"@en ;
+.
+
+:540
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=540> ;
+    skos:prefLabel "Bias and equity"@en ;
+.
+
+:550
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=550> ;
+    skos:prefLabel "Human geography"@en ;
+.
+
+:560
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=560> ;
+    skos:prefLabel "Peoples and cultures"@en ;
+.
+
+:610
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=610> ;
+    skos:prefLabel "Government and politics"@en ;
+.
+
+:620
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=620> ;
+    skos:prefLabel "Economics and finance"@en ;
+.
+
+:630
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=630> ;
+    skos:prefLabel "Labour and employment"@en ;
+.
+
+:640
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=640> ;
+    skos:prefLabel "Occupations"@en ;
+.
+
+:650
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=650> ;
+    skos:prefLabel "Business, commerce and industry"@en ;
+.
+
+:710
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=710> ;
+    skos:prefLabel "Information / communications systems"@en ;
+.
+
+:720
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=720> ;
+    skos:prefLabel "Communications media"@en ;
+.
+
+:730
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=730> ;
+    skos:prefLabel "Publication / document types"@en ;
+.
+
+:810
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=810> ;
+    skos:prefLabel "Research and theory"@en ;
+.
+
+:820
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=820> ;
+    skos:prefLabel "Measurement"@en ;
+.
+:830
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=830> ;
+    skos:prefLabel "Tests and scales"@en ;
+.
+:910
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=910> ;
+    skos:prefLabel "Equipment"@en ;
+.
+
+:920
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=920> ;
+    skos:prefLabel "Facilities"@en ;
+.
+
+:830
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=830> ;
+    skos:prefLabel "Tests and scales"@en ;
+.
+
+:910
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=910> ;
+    skos:prefLabel "Equipment"@en ;
+.
+
+:920
+    prov:wasDerivedFrom <https://eric.ed.gov/?ti=920> ;
+    skos:prefLabel "Facilities"@en ;
+.
+
+:ated-eric-mapping a schema:CreativeWork ;
+    skos:prefLabel "ATED Subject Categories ERIC mapping"@en ;
+    schema:creator <https://kurrawong.ai> ;
+    schema:dateCreated "2026-09-14"^^xsd:date ;
+    schema:dateModified "2026-09-14"^^xsd:date ;
+    schema:publisher <https://kurrawong.ai> ;
+.
